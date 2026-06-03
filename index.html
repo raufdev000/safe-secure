@@ -28,13 +28,13 @@ body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--text);
 nav{position:fixed;top:0;left:0;width:100%;z-index:1000;padding:0 5vw;display:flex;align-items:center;justify-content:space-between;height:72px;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(200,16,46,0.12);transition:all 0.4s}
 nav.scrolled{height:60px;box-shadow:0 4px 40px rgba(200,16,46,0.08)}
 .nav-logo{display:flex;align-items:center;gap:10px}
-.nav-logo-icon{width:100px;height:50px;flex-shrink:0;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.nav-logo-icon{width:105px;height:55px;flex-shrink:0;display:flex;align-items:center;justify-content:center;overflow:hidden}
 .nav-logo-icon img{width:100%;height:100%;object-fit:contain;display:block}
 .nav-logo-text{display:flex;flex-direction:column;gap:1px}
 .logo-text{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--red);letter-spacing:1px;line-height:1}
 .logo-sub{font-size:10px;color:#888;letter-spacing:2px;text-transform:uppercase}
 .nav-links{display:flex;gap:36px;list-style:none}
-.nav-links a{text-decoration:none;font-size:14px;font-weight:500;color:var(--text);letter-spacing:0.3px;position:relative;padding-bottom:4px}
+.nav-links a{text-decoration:none;font-size:18px;font-weight:500;color:var(--text);letter-spacing:0.3px;position:relative;padding-bottom:4px}
 .nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--red);transition:width 0.3s}
 .nav-links a:hover::after,.nav-links a:hover{color:var(--red)}
 .nav-links a:hover::after{width:100%}
@@ -276,7 +276,7 @@ footer{background:var(--gray);padding:80px 5vw 32px;color:white}
 .footer-logo-wrap{display:flex;flex-direction:column;align-items:flex-start;gap:0;margin-bottom:16px}
 .footer-logo-img-box{width:180px;height:150px;flex-shrink:0;overflow:hidden;display:flex;align-items:center;justify-content:center}
 .footer-logo-img-box img{width:100%;height:100%;object-fit:contain;display:block}
-.footer-logo-text{display:flex;flex-direction:column;gap:2px}
+.footer-logo-text{display:flex;flex-direction:column;gap:2px;margin-top:4px}
 .footer-logo-name{font-family:'Bebas Neue',sans-serif;font-size:28px;color:white;letter-spacing:2px;line-height:1;display:block}
 .footer-logo-sub{font-size:11px;color:rgba(255,255,255,0.5);letter-spacing:3px;text-transform:uppercase}
 .footer-tagline{font-size:11px;color:rgba(255,255,255,0.3);letter-spacing:2px;text-transform:uppercase;margin-bottom:10px}
@@ -332,12 +332,7 @@ footer{background:var(--gray);padding:80px 5vw 32px;color:white}
   .pack-grid{grid-template-columns:repeat(2,1fr)}
   .quote-form{grid-template-columns:repeat(2,1fr)}
 }
-/* Nav logo ko mobile pe chota karo */
-@media(max-width:768px){
-  .nav-logo-icon{width:44px;height:36px}
-  .logo-text{font-size:16px}
-  .logo-sub{font-size:9px}
-}
+
 @media(max-width:768px){
   .hero-red-block,.hero-image-wrapper,.hero-red-dots{display:none}
   .hero-stats{flex-wrap:wrap;gap:24px}
@@ -444,7 +439,7 @@ footer{background:var(--gray);padding:80px 5vw 32px;color:white}
 <nav id="mainNav">
   <div class="nav-logo">
     <div class="nav-logo-icon">
-      <img src="icon-logo-01.png" alt="Safe & Secure Movers Logo" style="background-color: #1a1a1a;border-radius: 10%;padding: 5px;">
+      <img src="icon-logo-01.png" alt="Safe & Secure Movers Logo" style="background-color: #1a1a1a;padding: 2px; border-radius: 10%;">
     </div>
     <div class="nav-logo-text">
       <div class="logo-text">Safe & Secure</div>
@@ -576,7 +571,7 @@ footer{background:var(--gray);padding:80px 5vw 32px;color:white}
       <!-- TOP-RIGHT SMALL IMAGE -->
       <img
         class="img-side"
-        src="Transporteur _ quels sont les documents légaux _ - SupplyChainInfo.webp"
+        src="download (8).webp"
         alt="Moving and packing services Dubai"
         loading="lazy"
         onerror="this.style.background='linear-gradient(135deg,#fce8ec,#f5c0c9)';this.onerror=null;"
@@ -585,7 +580,7 @@ footer{background:var(--gray);padding:80px 5vw 32px;color:white}
       <!-- BOTTOM-RIGHT SMALL IMAGE -->
       <img
         class="img-side"
-        src="Affordable & Reliable Transport Services in Nainital.webp"
+        src="download (8).webp"
         alt="Furniture assembly and transport UAE"
         loading="lazy"
         onerror="this.style.background='linear-gradient(135deg,#fce8ec,#f5c0c9)';this.onerror=null;"
@@ -863,10 +858,7 @@ window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',scrollY>60
 // Mobile menu
 document.getElementById('burger').addEventListener('click',()=>document.getElementById('mobileMenu').classList.add('open'));
 document.getElementById('menuClose').addEventListener('click',()=>document.getElementById('mobileMenu').classList.remove('open'));
-// Mobile menu — close on any link click
-document.querySelectorAll('.mobile-menu a').forEach(link=>{
-  link.addEventListener('click',()=>document.getElementById('mobileMenu').classList.remove('open'));
-});
+
 // Scroll reveal
 const revealEls=document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale');
 const observer=new IntersectionObserver(entries=>{
