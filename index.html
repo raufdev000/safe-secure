@@ -1,940 +1,1100 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Safe & Secure Movers | Dubai UAE</title>
-
-<!-- PRECONNECT — DNS ready pehle se -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://cdnjs.cloudflare.com">
-
-<!-- FONTS -->
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-<!-- CSS -->
-<link rel="stylesheet" href="style.css">
-
-<!-- GSAP — synchronous, order guaranteed -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
-
-</head>
-<body>
-
-<!-- Noise texture overlay -->
-<div class="noise"></div>
-
-<!-- Custom cursor -->
-<div id="cursor-dot"></div>
-<div id="cursor-ring"></div>
-
-<!-- 3D Background Canvas -->
-<canvas id="bg-canvas"></canvas>
-
-<!-- Mobile Menu -->
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#home" onclick="closeMobile()">Home</a>
-  <div class="mobile-divider"></div>
-  <a href="#services" onclick="closeMobile()">Services</a>
-  <div class="mobile-divider"></div>
-  <a href="#about" onclick="closeMobile()">About</a>
-  <div class="mobile-divider"></div>
-  <a href="#faq" onclick="closeMobile()">FAQ</a>
-  <div class="mobile-divider"></div>
-  <a href="#contact" onclick="closeMobile()">Contact</a>
-</div>
-
-<!-- NAV -->
-<nav id="mainNav">
-  <a class="nav-logo" href="#">
-    <div class="nav-logo-img">
-      <img src="" alt="Safe & Secure Movers" onerror="this.style.display='none'">
-    </div>
-    <div class="nav-logo-txt">
-      <h2>Safe & Secure</h2>
-      <span>Movers Dubai</span>
-    </div>
-  </a>
-  <ul class="nav-links">
-    <li><a href="#home">Home</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#faq">FAQ</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <a class="nav-cta" href="https://api.whatsapp.com/send/?phone=971556255690" target="_blank"><span>📞 Get Quote</span></a>
-  <div class="hamburger" id="burger">
-    <span></span><span></span><span></span>
-  </div>
-</nav>
-<section class="hero" id="home">
-
-  <div class="hero-video-bg">
-    <!--
-      APNI VIDEO KA NAAM YAHAN DAAL DO:
-      WebM pehle (fast) → MP4 fallback (purane browsers)
-    -->
-    <video muted playsinline loop preload="none" id="heroVid">
-      <source src="video1.webm" type="video/webm">
-      <source src="video1.mp4"  type="video/mp4">
-    </video>
-  </div>
-
-  <div class="hero-grid"></div>
-  <div class="hero-orb"></div>
-
-  <div class="hero-content">
-    <div class="hero-eyebrow">
-      <div class="eyebrow-dot">
-        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-      </div>
-      <span>Dubai's #1 Movers</span>
-    </div>
-
-    <h1 id="heroH1">
-      <span class="line">MOVE </span>
-      <span class="vol">SMART, </span>
-      <span class="accent">MOVE SAFE</span>
-    </h1>
-
-    <p class="hero-desc">
-      Professional moving & packing services across Dubai, Abu Dhabi, Sharjah & all UAE.
-      We handle your belongings like our own — with precision, care, and trust.
-    </p>
-
-    <div class="hero-buttons">
-      <a class="btn-vol" href="#quote">
-        Request Free Quote
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-      <a class="btn-ghost" href="https://api.whatsapp.com/send/?phone=971556255690" target="_blank">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-        WhatsApp Us
-      </a>
-    </div>
-  </div>
-
-  <div class="hero-stats-divider"></div>
-
-  <div class="scroll-ind">
-    <span>Scroll</span>
-    <div class="scroll-line"></div>
-  </div>
-
-</section>
-
-<!-- MARQUEE -->
-<div class="marquee-section">
-  <div class="marquee-track">
-    <span class="marquee-item">Residential Moves<span class="m-sep"></span></span>
-    <span class="marquee-item">Commercial Packing<span class="m-sep"></span></span>
-    <span class="marquee-item">Furniture Assembly<span class="m-sep"></span></span>
-    <span class="marquee-item">Secure Storage<span class="m-sep"></span></span>
-    <span class="marquee-item">International Shipping<span class="m-sep"></span></span>
-    <span class="marquee-item">Office Shifting<span class="m-sep"></span></span>
-    <span class="marquee-item">Dismantling Service<span class="m-sep"></span></span>
-    <span class="marquee-item">Residential Moves<span class="m-sep"></span></span>
-    <span class="marquee-item">Commercial Packing<span class="m-sep"></span></span>
-    <span class="marquee-item">Furniture Assembly<span class="m-sep"></span></span>
-    <span class="marquee-item">Secure Storage<span class="m-sep"></span></span>
-    <span class="marquee-item">International Shipping<span class="m-sep"></span></span>
-    <span class="marquee-item">Office Shifting<span class="m-sep"></span></span>
-    <span class="marquee-item">Dismantling Service<span class="m-sep"></span></span>
-  </div>
-</div>
-
-<!-- SERVICES -->
-<section class="section services" id="services">
-  <div class="services-inner">
-    <div>
-      <div class="section-tag reveal">What We Offer</div>
-      <div class="section-title reveal d1">OUR<br>PREMIUM<br><span class="accent">SERVICES</span></div>
-      <p class="services-desc reveal d2">Your trusted partner for stress-free relocation in Dubai, Al Ain, Abu Dhabi, Sharjah & beyond. We handle every move with precision.</p>
-    </div>
-    <div class="services-grid">
-      <div class="s-card reveal d1 ">
-        <div class="s-num">01</div>
-        <div class="s-icon"><svg viewBox="0 0 24 24"><path d="M1 3h15l5 7v7H1V3z"/><circle cx="6" cy="18" r="2"/><circle cx="17" cy="18" r="2"/><path d="M10 3v7h11"/></svg></div>
-        <h3>Transportation</h3>
-        <p>Safe, tracked, and on-time delivery across the UAE with our modern fleet.</p>
-      </div>
-      <div class="s-card reveal d2">
-        <div class="s-num">02</div>
-        <div class="s-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-        <h3>Household Moving</h3>
-        <p>Expert team ensures a safe and secure transition for all your home belongings.</p>
-      </div>
-      <div class="s-card reveal d3">
-        <div class="s-num">03</div>
-        <div class="s-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></div>
-        <h3>Commercial Movers</h3>
-        <p>Top-tier commercial moving with minimal downtime and maximum efficiency.</p>
-      </div>
-      <div class="s-card reveal d1">
-        <div class="s-num">04</div>
-        <div class="s-icon"><svg viewBox="0 0 24 24"><path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z"/><path d="M3 9V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v2"/><path d="M12 12v5"/><path d="M9 14h6"/></svg></div>
-        <h3>Warehouse & Storage</h3>
-        <p>Climate-controlled warehousing & storage solutions across UAE.</p>
-      </div>
-      <div class="s-card reveal d2">
-        <div class="s-num">05</div>
-        <div class="s-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93L17.66 6.34M4.93 4.93L6.34 6.34M12 2v2M12 20v2M4.93 19.07l1.41-1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2"/></svg></div>
-        <h3>House & Office Shifting</h3>
-        <p>Full-service shifting for residential and commercial spaces UAE-wide.</p>
-      </div>
-      <div class="s-card reveal d3">
-        <div class="s-num">06</div>
-        <div class="s-icon"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
-        <h3>Dismantle & Assembly</h3>
-        <p>Precise, careful, and damage-free furniture disassembly and reassembly.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
- 
-<!-- ===== HTML ===== -->
-<section class="section about" id="about">
-  <div class="about-imgs reveal-l">
-    <div class="about-img-layout">
- 
-      <!--
-        MAIN IMAGE (left tall):
-        src mein apni image ka naam daal do
-        e.g. src="images/about-main.jpg"
-      -->
-      <img
-        class="about-img-main"
-        src="download (8).webp"
-        alt="Safe and Secure Movers UAE"
-      >
- 
-      <!--
-        TOP RIGHT IMAGE:
-        src="images/about-side1.jpg"
-      -->
-      <img
-        class="about-img-sm"
-        src="Affordable & Reliable Transport Services in Nainital.webp"
-        alt="Moving Services Dubai"
-      >
- 
-      <!--
-        BOTTOM RIGHT IMAGE:
-        src="images/about-side2.jpg"
-      -->
-      <img
-        class="about-img-sm"
-        src="Facebook Ads _ Instagram growth _ Tiktok.jfif"
-        alt="Professional Packers UAE"
-      >
- 
-    </div>
-    <div class="about-badge reveal-s d3">
-      <div class="bn">10+</div>
-      <div class="bl">Years<br>Experience</div>
-    </div>
-  </div>
- 
-  <div class="reveal-r">
-    <div class="section-tag">Why Choose Us</div>
-    <div class="section-title">THE SMART<br>CHOICE FOR<br><span class="accent">YOUR MOVE</span></div>
-    <div class="why-list">
-      <div class="why-item">
-        <div class="w-icon"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-        <div><h4>Professional Expertise</h4><p>Skilled professionals committed to excellence in every move we handle across UAE.</p></div>
-      </div>
-      <div class="why-item">
-        <div class="w-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
-        <div><h4>Customized Solutions</h4><p>Every move is unique — we offer personalized packages tailored to your exact needs.</p></div>
-      </div>
-      <div class="why-item">
-        <div class="w-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <div><h4>Safety First</h4><p>Well-maintained fleet, quality packing materials, and secure storage for peace of mind.</p></div>
-      </div>
-      <div class="why-item">
-        <div class="w-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-        <div><h4>Transparent Pricing</h4><p>No hidden costs. Clear, competitive estimates with no surprises on moving day.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- STATS BAND -->
-
-<section class="stats-band">
-  <div class="sblock reveal d1">
-    <span class="snum"><span class="counter" data-target="2500">0</span><span class="ssuf">+</span></span>
-    <div class="slabel">Satisfied Clients</div>
-  </div>
-  <div class="sblock reveal d2">
-    <span class="snum"><span class="counter" data-target="100">0</span><span class="ssuf">%</span></span>
-    <div class="slabel">Work Quality</div>
-  </div>
-  <div class="sblock reveal d3">
-    <span class="snum"><span class="counter" data-target="3">0</span><span class="ssuf">k+</span></span>
-    <div class="slabel">Projects Done</div>
-  </div>
-  <div class="sblock reveal d4">
-    <span class="snum"><span class="counter" data-target="6">0</span><span class="ssuf"></span></span>
-    <div class="slabel">Awards Won</div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="section testimonials">
-  <div style="text-align:center">
-    <div class="section-tag reveal" style="justify-content:center">What Clients Say</div>
-    <div class="section-title reveal d1">TRUSTED BY<br><span class="accent">THOUSANDS</span></div>
-  </div>
-  <div class="testi-slider">
-    <div class="testi-track">
-      <div class="t-card">
-        <div class="t-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-        <p class="t-text">Safe and Secure Movers exceeded my expectations. The team was punctual, courteous, and handled everything with great care. Exceptional smooth experience!</p>
-        <div class="t-author"><div class="t-av">CN</div><div><div class="t-name">Carrie Nicks</div><div class="t-role">Home Owner</div></div></div>
-      </div>
-      <div class="t-card">
-        <div class="t-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-        <p class="t-text">Every step was handled with utmost professionalism. Remarkable efficiency and expertise in packing and transporting. Truly a five-star experience in every way.</p>
-        <div class="t-author"><div class="t-av">JW</div><div><div class="t-name">Jack Wells</div><div class="t-role">Foreign Move Client</div></div></div>
-      </div>
-      <div class="t-card">
-        <div class="t-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-        <p class="t-text">From start to finish — efficient, professional, and careful. Their attention to detail was impressive. Highly recommend for a stress-free moving experience!</p>
-        <div class="t-author"><div class="t-av">JR</div><div><div class="t-name">James Roe</div><div class="t-role">Condo Owner</div></div></div>
-      </div>
-      <div class="t-card">
-        <div class="t-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-        <p class="t-text">Best movers in UAE! They made our office relocation absolutely seamless. Highly professional and very careful with all our equipment. Will book again!</p>
-        <div class="t-author"><div class="t-av">AM</div><div><div class="t-name">Ahmed M.</div><div class="t-role">Office Manager</div></div></div>
-      </div>
-      <!-- Duplicates for loop -->
-      <div class="t-card">
-        <div class="t-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-        <p class="t-text">Safe and Secure Movers exceeded my expectations. The team was punctual, courteous, and handled everything with great care. Exceptional smooth experience!</p>
-        <div class="t-author"><div class="t-av">CN</div><div><div class="t-name">Carrie Nicks</div><div class="t-role">Home Owner</div></div></div>
-      </div>
-      <div class="t-card">
-        <div class="t-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-        <p class="t-text">Every step was handled with utmost professionalism. Remarkable efficiency and expertise in packing and transporting. Truly a five-star experience in every way.</p>
-        <div class="t-author"><div class="t-av">JW</div><div><div class="t-name">Jack Wells</div><div class="t-role">Foreign Move Client</div></div></div>
-      </div>
-      <div class="t-card">
-        <div class="t-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-        <p class="t-text">Best movers in UAE! They made our office relocation absolutely seamless. Highly professional and very careful with all our equipment. Will book again!</p>
-        <div class="t-author"><div class="t-av">AM</div><div><div class="t-name">Ahmed M.</div><div class="t-role">Office Manager</div></div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- HOW WE PACK -->
-<section class="section howpack">
-  <div class="pack-header">
-    <div class="section-tag reveal" style="justify-content:center">Our Process</div>
-    <div class="section-title reveal d1">HOW WE<br><span class="accent">PACK & MOVE</span></div>
-  </div>
-  <div class="pack-grid">
-    <div class="p-card reveal d1">
-      <div class="p-ico"><svg viewBox="0 0 24 24"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"/><path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg></div>
-      <h4>Careful Handling</h4>
-      <p>Every item treated with meticulous care using premium packing techniques and materials.</p>
-    </div>
-    <div class="p-card reveal d2">
-      <div class="p-ico"><svg viewBox="0 0 24 24"><path d="M12 22V12m0 0L6 6m6 6l6-6"/><path d="M19 17c0 2.76-3.13 5-7 5s-7-2.24-7-5"/></svg></div>
-      <h4>Recycled Packaging</h4>
-      <p>Eco-friendly packing materials — sturdy, sustainable, and safe for your belongings.</p>
-    </div>
-    <div class="p-card reveal d3">
-      <div class="p-ico"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 6v6l4 2"/><circle cx="18" cy="4" r="3"/></svg></div>
-      <h4>Weather Resistant</h4>
-      <p>All packaging is weatherproofed to protect from UAE's heat, moisture and dust.</p>
-    </div>
-    <div class="p-card reveal d4">
-      <div class="p-ico"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></div>
-      <h4>Space Saving</h4>
-      <p>Smart packing strategies minimize space usage, reducing transport costs and trips.</p>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-
-<section class="section faq" id="faq">
-  <div class="reveal-l">
-    <div class="section-tag">Got Questions?</div>
-    <div class="section-title">FREQUENTLY<br>ASKED<br><span class="accent">QUESTIONS</span></div>
-    <p style="font-size:13px;color:var(--grey-steel);margin-top:20px;line-height:1.8;max-width:280px">
-      Can't find an answer? Contact us directly — we're happy to help with any queries about your move.
-    </p>
-    <a class="btn-vol" href="https://api.whatsapp.com/send/?phone=971556255690" target="_blank" style="margin-top:32px;display:inline-flex">
-      Ask on WhatsApp
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-    </a>
-  </div>
- 
-  <div class="faq-list reveal-r">
-    <div class="faq-item">
-      <button class="faq-q">What services does Safe and Secure Movers provide?
-        <div class="faq-toggle"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
-      </button>
-      <div class="faq-a"><p>We offer comprehensive moving services including residential and commercial packing, local and international transportation, storage solutions, furniture assembly/disassembly, and relocation consulting.</p></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q">Is Safe and Secure Movers licensed and insured?
-        <div class="faq-toggle"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
-      </button>
-      <div class="faq-a"><p>Yes, we are fully licensed and insured. Our team adheres to industry standards ensuring the safety and security of your belongings throughout the entire moving process.</p></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q">How do I request a quote for my move?
-        <div class="faq-toggle"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
-      </button>
-      <div class="faq-a"><p>Fill out our online quote form on this page, or contact our customer service team via WhatsApp or phone. Provide move details and we'll give you a personalized, transparent quote.</p></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q">What factors affect the cost of a move?
-        <div class="faq-toggle"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
-      </button>
-      <div class="faq-a"><p>The cost is influenced by distance, volume of items, packing services required, and any special handling needs like fragile items, storage, or dismantling of heavy furniture.</p></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q">Can you assist with international relocations?
-        <div class="faq-toggle"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
-      </button>
-      <div class="faq-a"><p>Absolutely! We specialize in international moves and can assist with logistics, documentation, customs clearance, and transportation to or from the UAE.</p></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q">What packing materials do you use?
-        <div class="faq-toggle"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
-      </button>
-      <div class="faq-a"><p>We use premium materials including heavy-duty boxes, bubble wrap, packing paper, stretch wrap, and tape. Specialized packaging is used for fragile or high-value items.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- QUOTE FORM -->
-<section class="quote-section" id="quote">
-  <div class="quote-inner">
-    <div class="reveal-l">
-      <div class="section-tag">Free Estimate</div>
-      <div class="section-title">GET YOUR<br>FREE MOVING<br><span class="accent">QUOTE</span></div>
-      <p style="font-size:13px;color:var(--grey-steel);margin-top:16px;line-height:1.8;max-width:300px">Fill in your details and we'll get back to you within 24 hours with a transparent, competitive price.</p>
-      <div style="margin-top:32px;display:flex;flex-direction:column;gap:16px">
-        <div style="display:flex;align-items:center;gap:12px">
-          <div style="width:36px;height:36px;background:rgba(181,52,26,0.15);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--vol-bright)" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          </div>
-          <div>
-            <div style="font-size:12px;font-weight:600;color:var(--white)">+971 52 440 2005</div>
-            <div style="font-size:11px;color:var(--grey-steel)">Call or WhatsApp</div>
-          </div>
-        </div>
-        <div style="display:flex;align-items:center;gap:12px">
-          <div style="width:36px;height:36px;background:rgba(181,52,26,0.15);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--vol-bright)" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          </div>
-          <div>
-            <div style="font-size:12px;font-weight:600;color:var(--white)">info@safeandsecuremovers.com</div>
-            <div style="font-size:11px;color:var(--grey-steel)">Email us anytime</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="quote-form reveal-r">
-      <div class="form-row">
-        <div class="fg"><label>Full Name</label><input type="text" placeholder="Your name"></div>
-        <div class="fg"><label>Phone Number</label><input type="tel" placeholder="+971 XX XXX XXXX"></div>
-      </div>
-      <div class="form-row">
-        <div class="fg"><label>Email Address</label><input type="email" placeholder="your@email.com"></div>
-        <div class="fg"><label>Moving Date</label><input type="date"></div>
-      </div>
-      <div class="form-row">
-        <div class="fg"><label>Moving From</label><input type="text" placeholder="Current location"></div>
-        <div class="fg"><label>Moving To</label><input type="text" placeholder="Destination"></div>
-      </div>
-      <div class="form-row">
-        <div class="fg"><label>Type of Move</label>
-          <select>
-            <option>Select type</option>
-            <option>Residential</option>
-            <option>Commercial</option>
-            <option>Studio / Office</option>
-            <option>International</option>
-          </select>
-        </div>
-        <div class="fg"><label>Long Distance?</label>
-          <select>
-            <option>Select</option>
-            <option>Yes</option>
-            <option>No</option>
-          </select>
-        </div>
-      </div>
-      <button class="btn-submit" id="submitBtn" type="button">Request Your Free Quote →</button>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer id="contact">
-  <div class="footer-top">
-    <div class="f-brand">
-      <a class="f-logo" href="#">
-        <div class="f-logo-img">
-          <img src="" alt="Logo" onerror="this.style.display='none'">
-        </div>
-        <div class="f-logo-txt">
-          <h2>Safe & Secure</h2>
-          <span>Movers Dubai</span>
-        </div>
-      </a>
-      <p>We are dedicated to making your move as seamless and secure as possible across the entire UAE. Trusted by thousands since 2014.</p>
-      <div class="f-socials">
-        <a class="f-s" href="https://www.facebook.com/people/Safe-Secure-Movers/61564820282959/" target="_blank"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-        <a class="f-s" href="#"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
-        <a class="f-s" href="https://api.whatsapp.com/send/?phone=971556255690" target="_blank"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
-      </div>
-    </div>
-    <div>
-      <div class="f-head">Services</div>
-      <ul class="f-links">
-        <li><a href="#">Transportation Service</a></li>
-        <li><a href="#">Household Moving</a></li>
-        <li><a href="#">Commercial Movers</a></li>
-        <li><a href="#">Warehouse & Storage</a></li>
-        <li><a href="#">House & Office Shifting</a></li>
-        <li><a href="#">Dismantling Service</a></li>
-      </ul>
-    </div>
-    <div>
-      <div class="f-head">Quick Links</div>
-      <ul class="f-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">FAQ</a></li>
-        <li><a href="#">Privacy Policy</a></li>
-        <li><a href="#">Contact Us</a></li>
-      </ul>
-    </div>
-    <div>
-      <div class="f-head">Contact</div>
-      <ul class="f-contact">
-        <li><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>United Arab Emirates</li>
-        <li><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+971 52 440 2005</li>
-        <li><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>info@safeandsecuremovers.com</li>
-      </ul>
-    </div>
-  </div>
-  <div class="f-bottom">
-    <p>© 2026 <a href="#">safeandsecuremovers.com</a> — All rights reserved</p>
-    <p>Crafted with ❤️ in Dubai, UAE</p>
-  </div>
-</footer>
-
-<!-- WhatsApp Float -->
-<a class="wa-btn" href="https://api.whatsapp.com/send/?phone=971556255690" target="_blank">
-  <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-</a>
-
-<script>
-// ===== GSAP SETUP =====
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
-
-// ===== CUSTOM CURSOR =====
-const dot = document.getElementById('cursor-dot');
-const ring = document.getElementById('cursor-ring');
-let mx = window.innerWidth/2, my = window.innerHeight/2;
-let rx = mx, ry = my;
-
-document.addEventListener('mousemove', e => {
-  mx = e.clientX; my = e.clientY;
-  gsap.to(dot, { x: mx, y: my, duration: 0.1, ease: 'none' });
-});
-function animateRing() {
-  rx += (mx - rx) * 0.12;
-  ry += (my - ry) * 0.12;
-  gsap.set(ring, { x: rx, y: ry });
-  requestAnimationFrame(animateRing);
-}
-animateRing();
-
-document.querySelectorAll('a,button,.s-card,.why-item,.p-card').forEach(el => {
-  el.addEventListener('mouseenter', () => document.body.classList.add('hovering'));
-  el.addEventListener('mouseleave', () => document.body.classList.remove('hovering'));
-});
-
-// ===== 3D BACKGROUND CANVAS =====
-(function() {
-  const canvas = document.getElementById('bg-canvas');
-  const ctx = canvas.getContext('2d');
-  let W, H, particles = [], lines = [];
-  const COLORS = ['rgba(181,52,26,', 'rgba(232,68,34,', 'rgba(46,58,78,', 'rgba(74,85,104,'];
-
-  function resize() {
-    W = canvas.width = window.innerWidth;
-    H = canvas.height = window.innerHeight;
-  }
-
-  class Particle {
-    constructor() { this.reset() }
-    reset() {
-      this.x = Math.random() * W;
-      this.y = Math.random() * H;
-      this.z = Math.random() * 3 + 0.5;
-      this.vx = (Math.random() - 0.5) * 0.3;
-      this.vy = (Math.random() - 0.5) * 0.3;
-      this.r = Math.random() * 1.5 + 0.3;
-      this.col = COLORS[Math.floor(Math.random() * COLORS.length)];
-      this.a = Math.random() * 0.4 + 0.1;
-    }
-    update() {
-      this.x += this.vx * this.z;
-      this.y += this.vy * this.z;
-      if (this.x < 0 || this.x > W || this.y < 0 || this.y > H) this.reset();
-    }
-    draw() {
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.r * this.z, 0, Math.PI * 2);
-      ctx.fillStyle = this.col + this.a + ')';
-      ctx.fill();
-    }
-  }
-
-  resize();
-  window.addEventListener('resize', resize);
-  for (let i = 0; i < 120; i++) particles.push(new Particle());
-
-  function connectParticles() {
-    for (let i = 0; i < particles.length; i++) {
-      for (let j = i + 1; j < particles.length; j++) {
-        const dx = particles[i].x - particles[j].x;
-        const dy = particles[i].y - particles[j].y;
-        const dist = Math.sqrt(dx*dx + dy*dy);
-        if (dist < 120) {
-          const alpha = (1 - dist/120) * 0.06;
-          ctx.beginPath();
-          ctx.moveTo(particles[i].x, particles[i].y);
-          ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = `rgba(181,52,26,${alpha})`;
-          ctx.lineWidth = 0.5;
-          ctx.stroke();
-        }
-      }
-    }
-  }
-
-  let angle = 0;
-  function drawBox() {
-    const cx = W * 0.75, cy = H * 0.5;
-    const size = Math.min(W, H) * 0.22;
-    const cos = Math.cos(angle), sin = Math.sin(angle);
-    const cos2 = Math.cos(angle * 0.6), sin2 = Math.sin(angle * 0.6);
-
-    const verts3d = [
-      [-1,-1,-1],[ 1,-1,-1],[ 1, 1,-1],[-1, 1,-1],
-      [-1,-1, 1],[ 1,-1, 1],[ 1, 1, 1],[-1, 1, 1]
-    ];
-
-    const proj = verts3d.map(([x,y,z]) => {
-      let x1 = x*cos - z*sin, z1 = x*sin + z*cos;
-      let y2 = y*cos2 - z1*sin2, z2 = y*sin2 + z1*cos2;
-      const scale = size / (z2 + 3);
-      return [cx + x1*scale, cy + y2*scale, z2];
-    });
-
-    const edges = [
-      [0,1],[1,2],[2,3],[3,0],[4,5],[5,6],[6,7],[7,4],
-      [0,4],[1,5],[2,6],[3,7]
-    ];
-
-    edges.forEach(([a,b]) => {
-      ctx.beginPath();
-      ctx.moveTo(proj[a][0], proj[a][1]);
-      ctx.lineTo(proj[b][0], proj[b][1]);
-      ctx.strokeStyle = 'rgba(181,52,26,0.06)';
-      ctx.lineWidth = 1;
-      ctx.stroke();
-    });
-    proj.forEach(([px,py]) => {
-      ctx.beginPath();
-      ctx.arc(px, py, 1.5, 0, Math.PI*2);
-      ctx.fillStyle = 'rgba(232,68,34,0.12)';
-      ctx.fill();
-    });
-  }
-
-  function loop() {
-    ctx.clearRect(0,0,W,H);
-    angle += 0.003;
-    particles.forEach(p => { p.update(); p.draw(); });
-    connectParticles();
-    drawBox();
-    requestAnimationFrame(loop);
-  }
-  loop();
-})();
-
-// ===== NAV ANIMATION =====
-gsap.to('#mainNav', { translateY: 0, duration: 0.55, ease: 'power3.out', delay: 0.3 });
-
-window.addEventListener('scroll', () => {
-  const nav = document.getElementById('mainNav');
-  nav.style.background = window.scrollY > 60
-    ? 'rgba(10,13,18,0.92)'
-    : 'rgba(15,19,25,0.6)';
-});
-
-// ===== HERO ANIMATIONS (GSAP) =====
-const heroTL = gsap.timeline({ delay: 0.2 });
-document.querySelectorAll('.hero h1 .line span').forEach((span, i) => {
-  heroTL.to(span, {
-    y: 0, duration: 0.6,
-    ease: 'power4.out'
-  }, i * 0.07);
-});
-heroTL
-  .to('.hero-eyebrow', { opacity: 1, y: 0, duration: 0.45, ease: 'power3.out' }, 0)
-  .to('.hero-desc',    { opacity: 1, duration: 0.45, ease: 'power2.out' }, 0.35)
-  .to('.hero-buttons', { opacity: 1, y: 0, duration: 0.45, ease: 'power3.out' }, 0.45)
-  .to('.hero-stats',   { opacity: 1, duration: 0.45, ease: 'power2.out' }, 0.55)
-  .to('#heroCard',     { opacity: 1, duration: 0.55,   ease: 'power3.out' }, 0.3);
-
-// Hero parallax on scroll
-gsap.to('.hero-img-bg img', {
-  scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true },
-  scale: 1.15, ease: 'none'
-});
-gsap.to('.hero-orb', {
-  scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 1 },
-  y: -120, ease: 'none'
-});
-
-// ===== SCROLL REVEAL — repeat on scroll back =====
-// "play none reverse none"  →  forward me play, wapis aane pr reverse (reset), agle baar phir play
-// start: 'top 70%'          →  sirf 30% screen show hone par trigger
-
-document.querySelectorAll('.reveal').forEach(el => {
-  gsap.fromTo(el,
-    { opacity: 0, y: 40 },
-    {
-      opacity: 1, y: 0,
-      duration: 0.5,
-      ease: 'power3.out',
-      scrollTrigger: {
-        trigger: el,
-        start: 'top 80%',
-        toggleActions: 'play none none reverse'
-      }
-    }
-  );
-});
-
-document.querySelectorAll('.reveal-l').forEach(el => {
-  gsap.fromTo(el,
-    { opacity: 0, x: -50 },
-    {
-      opacity: 1, x: 0,
-      duration: 0.5,
-      ease: 'power3.out',
-      scrollTrigger: {
-        trigger: el,
-        start: 'top 70%',
-        toggleActions: 'play none none reverse'
-      }
-    }
-  );
-});
-
-document.querySelectorAll('.reveal-r').forEach(el => {
-  gsap.fromTo(el,
-    { opacity: 0, x: 50 },
-    {
-      opacity: 1, x: 0,
-      duration: 0.5,
-      ease: 'power3.out',
-      scrollTrigger: {
-        trigger: el,
-        start: 'top 70%',
-        toggleActions: 'play none none reverse'
-      }
-    }
-  );
-});
-
-document.querySelectorAll('.reveal-s').forEach(el => {
-  gsap.fromTo(el,
-    { opacity: 0, scale: 0.85 },
-    {
-      opacity: 1, scale: 1,
-      duration: 0.45,
-      ease: 'back.out(1.2)',
-      scrollTrigger: {
-        trigger: el,
-        start: 'top 70%',
-        toggleActions: 'play none none reverse'
-      }
-    }
-  );
-});
-
-// ===== 3D TILT — SERVICE CARDS =====
-document.querySelectorAll('.s-card').forEach(card => {
-  card.addEventListener('mousemove', e => {
-    const rect = card.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width - 0.5;
-    const y = (e.clientY - rect.top) / rect.height - 0.5;
-    gsap.to(card, {
-      rotateX: -y * 12,
-      rotateY: x * 12,
-      duration: 0.4,
-      ease: 'power2.out',
-      transformPerspective: 800
-    });
-  });
-  card.addEventListener('mouseleave', () => {
-    gsap.to(card, { rotateX: 0, rotateY: 0, duration: 0.6, ease: 'elastic.out(1,0.7)' });
-  });
-});
-
-// ===== COUNTER ANIMATION — repeat on scroll back =====
-document.querySelectorAll('.counter').forEach(el => {
-  const target = parseInt(el.dataset.target);
-  ScrollTrigger.create({
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safe & Secure Movers Dubai — No. 1 Transport Service</title>
     
-    start: 'top 70%',
-    // onEnter: scroll down karke aaye → count up
-    // onLeaveBack: upar wapis scroll kare → 0 pe reset
-    onEnter: () => {
-      gsap.fromTo(el,
-        { textContent: 0 },
-        {
-          textContent: target,
-          duration: 1.4,
-          ease: 'power3.out',
-          snap: { textContent: 1 },
-          onUpdate: function() {
-            el.textContent = Math.ceil(parseFloat(el.textContent));
-          }
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS Script CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Core Engine Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.8/dist/hls.min.js"></script>
+
+    <!-- Tailwind Config Injection -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        body: ['Inter', 'sans-serif'],
+                        display: ['Instrument Serif', 'serif'],
+                    },
+                    colors: {
+                        bg: 'hsl(var(--bg))',
+                        surface: 'hsl(var(--surface))',
+                        'text-primary': 'hsl(var(--text))',
+                        muted: 'hsl(var(--muted))',
+                        stroke: 'hsl(var(--stroke))',
+                    }
+                }
+            }
         }
-      );
-    },
-    onLeaveBack: () => {
-      gsap.killTweensOf(el);
-      el.textContent = '0';
-    }
-  });
-});
+    </script>
 
-// ===== MOBILE MENU =====
-const burger = document.getElementById('burger');
-const mMenu = document.getElementById('mobileMenu');
-let menuOpen = false;
-function closeMobile() {
-  mMenu.classList.remove('open');
-  burger.classList.remove('active');
-  menuOpen = false;
-}
-burger.addEventListener('click', () => {
-  menuOpen = !menuOpen;
-  mMenu.classList.toggle('open', menuOpen);
-  burger.classList.toggle('active', menuOpen);
-});
+    <!-- Global Custom Stylesheets & Keyframes -->
+    <style>
+        :root {
+            --bg: 0 0% 4%;
+            --surface: 0 0% 8%;
+            --text: 0 0% 96%;
+            --muted: 0 0% 53%;
+            --stroke: 0 0% 12%;
+            --accent: 0 0% 96%;
+        }
 
-// ===== FAQ =====
-document.querySelectorAll('.faq-q').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const item = btn.parentElement;
-    const isOpen = item.classList.contains('open');
-    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-    if (!isOpen) item.classList.add('open');
-  });
-});
+        body {
+            background-color: hsl(var(--bg));
+            color: hsl(var(--text));
+            overflow-x: hidden;
+        }
 
-// ===== FORM SUBMIT =====
-document.getElementById('submitBtn').addEventListener('click', function() {
-  const original = this.textContent;
-  this.textContent = '✓ Request Sent! We\'ll contact you soon.';
-  this.style.background = 'linear-gradient(135deg,#2e7d32,#43a047)';
-  setTimeout(() => {
-    this.textContent = original;
-    this.style.background = '';
-  }, 3500);
-});
+        /* Accent Gradient System Utilities */
+        .accent-gradient {
+            background: linear-gradient(90deg, #89AACC 0%, #4E85BF 100%);
+        }
 
-// ===== NAV SMOOTH SCROLL =====
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    const id = a.getAttribute('href');
-    if (id.length > 1 && document.querySelector(id)) {
-      e.preventDefault();
-      gsap.to(window, { duration: 1.2, scrollTo: { y: id, offsetY: 76 }, ease: 'power3.inOut' });
-    }
-  });
-});
+        .accent-ring-hover {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .accent-ring-hover::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(90deg, #89AACC 0%, #4E85BF 100%);
+            border-radius: inherit;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .accent-ring-hover:hover::before {
+            opacity: 1;
+        }
 
-// ===== HERO MOUSE PARALLAX =====
-document.addEventListener('mousemove', e => {
-  const xP = (e.clientX / window.innerWidth - 0.5) * 20;
-  const yP = (e.clientY / window.innerHeight - 0.5) * 12;
-  gsap.to('.hero-orb', { x: xP, y: yP, duration: 1.5, ease: 'power2.out' });
-  gsap.to('#heroCard .hero-img-card-inner', {
-    rotateY: -8 + xP * 0.15,
-    rotateX: 4 - yP * 0.1,
-    duration: 0.45,
-    ease: 'power2.out'
-  });
-});
+        /* Specified Keyframe Utility Animations */
+        @keyframes scroll-down {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(200%); }
+        }
+        .animate-scroll-down {
+            animation: scroll-down 1.5s ease-in-out infinite;
+        }
 
-// ===== P-CARD 3D TILT =====
-document.querySelectorAll('.p-card').forEach(card => {
-  card.addEventListener('mousemove', e => {
-    const rect = card.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width - 0.5;
-    const y = (e.clientY - rect.top) / rect.height - 0.5;
-    gsap.to(card, {
-      rotateX: -y * 10,
-      rotateY: x * 10,
-      transformPerspective: 800,
-      duration: 0.4,
-      ease: 'power2.out'
-    });
-  });
-  card.addEventListener('mouseleave', () => {
-    gsap.to(card, { rotateX: 0, rotateY: 0, duration: 0.7, ease: 'elastic.out(1,0.7)' });
-  });
-});
-</script>
+        @keyframes role-fade-in {
+            0% { opacity: 0; transform: translateY(8px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .animate-role-fade-in {
+            animation: role-fade-in 0.4s ease-out forwards;
+        }
+
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .animate-gradient-shift {
+            background-size: 200% 200%;
+            animation: gradient-shift 6s ease infinite;
+        }
+
+        /* Bento Grid Halftone Print System */
+        .halftone-overlay {
+            background-image: radial-gradient(circle, #000 1px, transparent 1px);
+            background-size: 4px 4px;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: hsl(var(--bg));
+        }
+        ::-webkit-scrollbar-thumb {
+            background: hsl(var(--stroke));
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: hsl(var(--muted));
+        }
+
+        /* Service Cards Internal Icons Layout Styling */
+        .s-icon svg {
+            width: 32px;
+            height: 32px;
+            fill: none;
+            stroke: #4E85BF;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            margin-bottom: 16px;
+        }
+        .s-card {
+            background: hsl(var(--surface));
+            border: 1px solid hsl(var(--stroke));
+            border-radius: 24px;
+            padding: 24px;
+            transition: all 0.3s ease;
+        }
+        .s-card:hover {
+            border-color: #89AACC;
+            background: hsl(var(--bg));
+            transform: translateY(-2px);
+        }
+           .q-input {
+            width: 100%;
+            background: hsl(var(--surface));
+            border: 1px solid hsl(var(--stroke));
+            border-radius: 12px;
+            padding: 12px 16px;
+            font-size: 14px;
+            color: hsl(var(--text));
+            outline: none;
+            transition: border-color 0.2s;
+            font-family: 'Inter', sans-serif;
+        }
+        .q-input:focus { border-color: #f5a623; }
+        .q-input option { background: hsl(20,8%,10%); }
+
+    </style>
+</head>
+<body class="font-body text-text-primary bg-bg antialiased selection:bg-text-primary selection:text-bg">
+
+    <!-- SECTION 1: LOADING SCREEN -->
+    <div id="loader" class="fixed inset-0 z-[9999] bg-bg flex flex-col justify-between p-6 md:p-12 select-none">
+        <div id="loader-eyebrow" class="text-xs text-muted uppercase tracking-[0.3em] opacity-0">Safe & Secure</div>
+        
+        <div class="h-24 flex items-center justify-start overflow-hidden">
+            <div id="loader-word-container" class="relative h-full w-full">
+                <!-- Word dynamic injection target -->
+            </div>
+        </div>
+
+        <div class="w-full space-y-4">
+            <div class="flex justify-end">
+                <span id="loader-counter" class="text-6xl md:text-8xl lg:text-9xl font-display text-text-primary tabular-nums">000</span>
+            </div>
+            <div class="w-full h-[3px] bg-stroke/50 relative rounded-full overflow-hidden">
+                <div id="loader-progress" class="absolute inset-y-0 left-0 w-0 accent-gradient shadow-[0_0_8px_rgba(137,170,204,0.35)]"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- GLOBAL FIXED NAVIGATION HEADER -->
+<nav class="fixed top-0 left-0 right-0 z-50 flex justify-center pt-4 md:pt-6 px-4 pointer-events-none">
+    <div id="navbar-pill" class="flex flex-col w-full max-w-sm md:max-w-fit rounded-3xl md:rounded-full backdrop-blur-md border border-white/10 bg-surface px-4 py-3 md:py-2 pointer-events-auto transition-all duration-300 shadow-lg">
+        
+        <div class="flex items-center justify-between w-full md:w-auto gap-4">
+            
+            <a href="#home" id="logo-container" class="flex items-center justify-center group shrink-0 pl-1">
+                <div class="h-8 md:h-9 w-auto flex items-center justify-center overflow-hidden">
+                    <img src="" alt="LOGO" class="h-full w-auto object-contain hidden">
+                    <span class="text-sm text-blue-500 font-mono font-bold tracking-wider group-hover:text-white transition-colors">[ LARGE LOGO ]</span>
+                </div>
+            </a>
+            
+            <button id="menu-toggle" class="flex md:hidden flex-col justify-center items-center w-8 h-8 gap-1.5 focus:outline-none" aria-label="Toggle Menu">
+                <span id="line1" class="w-5 h-[2px] bg-text-primary rounded transition-all duration-300"></span>
+                <span id="line2" class="w-5 h-[2px] bg-text-primary rounded transition-all duration-300"></span>
+                <span id="line3" class="w-5 h-[2px] bg-text-primary rounded transition-all duration-300"></span>
+            </button>
+
+            <div class="hidden md:flex items-center gap-1 lg:gap-2">
+    <a href="#home" class="group relative text-lg md:text-base font-medium px-4 py-2 text-white hover:text-blue-400 transition-colors duration-200 whitespace-nowrap">
+        <span>Home</span>
+        <span class="absolute bottom-1 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-blue-500 transition-all duration-300 group-hover:w-1/2"></span>
+    </a>
+    
+    <a href="#services" class="group relative text-lg md:text-base font-medium px-4 py-2 text-white hover:text-blue-400 transition-colors duration-200 whitespace-nowrap">
+        <span>Services</span>
+        <span class="absolute bottom-1 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-blue-500 transition-all duration-300 group-hover:w-1/2"></span>
+    </a>
+    
+    <a href="#contact" class="group relative text-lg md:text-base font-medium px-4 py-2 text-white hover:text-blue-400 transition-colors duration-200 whitespace-nowrap">
+        <span>Contact us</span>
+        <span class="absolute bottom-1 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-blue-500 transition-all duration-300 group-hover:w-1/2"></span>
+    </a>
+    
+    <a href="#faq" class="group relative text-lg md:text-base font-medium px-4 py-2 text-white hover:text-blue-400 transition-colors duration-200 whitespace-nowrap">
+        <span>FAQ</span>
+        <span class="absolute bottom-1 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-blue-500 transition-all duration-300 group-hover:w-1/2"></span>
+    </a>
+    
+    <a href="#fleet" class="group relative text-lg md:text-base font-medium px-4 py-2 text-white hover:text-blue-400 transition-colors duration-200 whitespace-nowrap">
+        <span>Our Fleet</span>
+        <span class="absolute bottom-1 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-blue-500 transition-all duration-300 group-hover:w-1/2"></span>
+    </a>
+</div>
+            <div class="hidden md:block w-px h-6 bg-stroke mx-2 shrink-0"></div>
+
+            <a href="https://api.whatsapp.com/send/?phone=971556255690" target="_blank" class="hidden md:inline-flex group relative items-center justify-center text-sm font-medium rounded-full px-4 py-2 text-text-primary overflow-visible shrink-0 whitespace-nowrap">
+                <span class="absolute inset-0 rounded-full accent-gradient -z-10 scale-[1.08] blur-[1px] opacity-0 group-hover:opacity-100 transition-opacity duration-300" style="padding: 2px; margin: -2px;"></span>
+                <span class="absolute inset-0 bg-surface rounded-full -z-10"></span>
+                <span class="flex items-center gap-1">WhatsApp Us <span class="inline-block transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200">↗</span></span>
+            </a>
+        </div>
+
+        <div id="mobile-menu" class="w-full max-h-0 overflow-hidden opacity-0 md:hidden flex flex-col items-center gap-4 pt-0 transition-all duration-300 ease-in-out">
+            <div class="w-full h-px bg-stroke my-2"></div>
+            <a href="#home" class="mobile-nav-link text-base font-medium text-text-primary py-1">Home</a>
+            <a href="#services" class="mobile-nav-link text-base font-medium text-muted hover:text-blue-500 py-1 transition-colors">Services</a>
+            <a href="#contact" class="mobile-nav-link text-base font-medium text-muted hover:text-blue-500 py-1 transition-colors">Contact us</a>
+            <a href="#faq" class="mobile-nav-link text-base font-medium text-muted hover:text-blue-500 py-1 transition-colors">FAQ</a>
+            <a href="#fleet" class="mobile-nav-link text-base font-medium text-muted hover:text-blue-500 py-1 transition-colors">Our Fleet</a>
+            
+            <a href="https://api.whatsapp.com/send/?phone=971556255690" target="_blank" class="w-full text-center mt-2 text-sm font-semibold rounded-full py-2.5 bg-blue-600 text-white hover:bg-blue-700 transition-colors shadow-md">
+                WhatsApp Us ↗
+            </a>
+        </div>
+    </div>
+</nav>
+
 <script>
-(function () {
-  const vid = document.getElementById('heroVid');
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const pillWrapper = document.getElementById('navbar-pill');
+        
+        // Hamburger Menu Morph Elements
+        const line1 = document.getElementById('line1');
+        const line2 = document.getElementById('line2');
+        const line3 = document.getElementById('line3');
 
-  // Page load hone ke baad video load karo — pehle page render ho
-  function startVideo() {
-    vid.preload = 'auto';
-    vid.play().catch(() => {
-      // Mobile autoplay block — gradient background show hoga
+        // Toggle Event Listener
+        menuToggle.addEventListener('click', () => {
+            const isOpen = mobileMenu.classList.contains('max-h-[400px]');
+            
+            if (!isOpen) {
+                // Open State Execution
+                mobileMenu.classList.remove('max-h-0', 'opacity-0', 'pt-0');
+                mobileMenu.classList.add('max-h-[400px]', 'opacity-100', 'pt-2');
+                
+                // Animate Pill Layout Sizing
+                pillWrapper.classList.remove('max-w-sm');
+                pillWrapper.classList.add('max-w-[92%]');
+                
+                // Hamburger morphs into an X
+                line1.classList.add('transform', 'rotate-45', 'translate-y-2');
+                line2.classList.add('opacity-0');
+                line3.classList.add('transform', '-rotate-45', '-translate-y-2');
+            } else {
+                // Close State Execution
+                closeMobileMenu();
+            }
+        });
+
+        // Close menu dynamically when clicking any link
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('max-h-[400px]', 'opacity-100', 'pt-2');
+            mobileMenu.classList.add('max-h-0', 'opacity-0', 'pt-0');
+            
+            pillWrapper.classList.remove('max-w-[92%]');
+            pillWrapper.classList.add('max-w-sm');
+            
+            // X morphs back to Hamburger
+            line1.classList.remove('transform', 'rotate-45', 'translate-y-2');
+            line2.classList.remove('opacity-0');
+            line3.classList.remove('transform', '-rotate-45', '-translate-y-2');
+        }
     });
-  }
-
-  if (document.readyState === 'complete') {
-    startVideo();
-  } else {
-    window.addEventListener('load', startVideo);
-  }
-
-  // Tab switch karo → pause, wapis aao → play (battery save)
-  document.addEventListener('visibilitychange', () => {
-    if (document.hidden) { vid.pause(); }
-    else { vid.play().catch(() => {}); }
-  });
-})();
 </script>
-<script src="script.js"></script>
+
+
+    <!-- SECTION 2: HERO SECTION -->
+    <section id="home" class="relative w-screen h-screen flex items-center justify-center overflow-hidden">
+        <!-- HLS Backplate Media Module -->
+        <div class="absolute inset-0 -z-30 w-full h-full overflow-hidden">
+            <video id="hero-video" autoplay muted loop playsinline class="absolute top-1/2 left-1/2 min-w-full min-h-full object-cover -translate-x-1/2 -translate-y-1/2"></video>
+            <div class="absolute inset-0 bg-black/20"></div>
+            <div class="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-bg to-transparent"></div>
+        </div>
+
+        <!-- Typography Matrix -->
+        <div class="z-10 text-center px-6 max-w-4xl flex flex-col items-center">
+            <div class="blur-in text-xs text-muted uppercase tracking-[0.3em] mb-8">DUBAI'S NO. 1 TRANSPORTATION SERVICE</div>
+            
+            <h1 class="name-reveal text-5xl md:text-7xl lg:text-8xl font-display italic leading-[1.0] tracking-tight text-text-primary mb-6">
+                Safe & Secure Movers
+            </h1>
+
+            <div class="blur-in text-base md:text-xl text-text-primary/90 font-light mb-6 h-8 flex items-center gap-1.5">
+                Premium <span id="dynamic-role" class="font-display italic text-text-primary inline-block min-w-[120px] text-left">Relocation</span> Solutions.
+            </div>
+
+            <p class="blur-in text-sm md:text-base text-muted max-w-lg mb-12 font-light leading-relaxed">
+                Your premium trusted partner for stress-free relocation across Dubai, Al Ain, Abu Dhabi, Sharjah & beyond. We execute every logistical transition with absolute precision.
+            </p>
+
+            <div class="blur-in inline-flex gap-4">
+                <a href="#services" class="group relative rounded-full text-sm px-7 py-3.5 bg-text-primary text-bg font-medium transition-all duration-300 hover:scale-105 hover:bg-bg hover:text-text-primary border border-transparent hover:border-white/20 accent-ring-hover">
+                    Our Services
+                </a>
+                <a href="https://api.whatsapp.com/send/?phone=971556255690" target="_blank" class="group rounded-full text-sm px-7 py-3.5 border-2 border-stroke bg-bg text-text-primary font-medium transition-all duration-300 hover:scale-105 hover:border-transparent accent-ring-hover">
+                    WhatsApp Us
+                </a>
+            </div>
+        </div>
+
+        <!-- Metric Scroll Overlay Bar -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none select-none">
+            <span class="text-[9px] text-muted uppercase tracking-[0.2em]">Scroll</span>
+            <div class="w-[1px] h-10 bg-stroke relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-1/2 bg-white/60 animate-scroll-down"></div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- SECTION 3: SERVICES GRID SECTION -->
+    <section id="services" class="bg-bg py-20 md:py-32 border-t border-stroke">
+        <div class="max-w-[1200px] mx-auto px-6 md:px-10 lg:px-16 scroll-reveal-node">
+            
+            <!-- Component Section Header -->
+            <div class="text-center mb-16">
+                <div class="flex items-center justify-center gap-3 text-xs text-muted uppercase tracking-[0.3em] mb-3">
+                    <div class="w-8 h-px bg-stroke"></div> What We Offer
+                </div>
+                <h2 class="text-4xl md:text-6xl font-light tracking-tight mb-5">Our <span class="font-display italic text-text-primary">Premium</span> Services</h2>
+                <p class="text-sm text-muted max-w-lg mx-auto leading-relaxed">Your trusted partner for stress-free relocation in Dubai, Al Ain, Abu Dhabi, Sharjah &amp; beyond. We handle every move with precision.</p>
+            </div>
+
+            <!-- Services Grid System -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Card 01 -->
+                <div class="s-card scroll-reveal-node">
+                    <div class="text-xs font-semibold tracking-[2px] text-muted/50 uppercase mb-4">01</div>
+                    <div class="s-icon"><svg viewBox="0 0 24 24"><path d="M1 3h15l5 7v7H1V3z"/><circle cx="6" cy="18" r="2"/><circle cx="17" cy="18" r="2"/><path d="M10 3v7h11"/></svg></div>
+                    <h3 class="text-base font-semibold text-white mb-2">Transportation</h3>
+                    <p class="text-sm text-muted leading-relaxed">Safe, tracked, and on-time delivery across the UAE with our modern fleet.</p>
+                </div>
+                <!-- Card 02 -->
+                <div class="s-card scroll-reveal-node">
+                    <div class="text-xs font-semibold tracking-[2px] text-muted/50 uppercase mb-4">02</div>
+                    <div class="s-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+                    <h3 class="text-base font-semibold text-white mb-2">Household Moving</h3>
+                    <p class="text-sm text-muted leading-relaxed">Expert team ensures a safe and secure transition for all your home belongings.</p>
+                </div>
+                <!-- Card 03 -->
+                <div class="s-card scroll-reveal-node">
+                    <div class="text-xs font-semibold tracking-[2px] text-muted/50 uppercase mb-4">03</div>
+                    <div class="s-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></div>
+                    <h3 class="text-base font-semibold text-white mb-2">Commercial Movers</h3>
+                    <p class="text-sm text-muted leading-relaxed">Top-tier commercial moving with minimal downtime and maximum efficiency.</p>
+                </div>
+                <!-- Card 04 -->
+                <div class="s-card scroll-reveal-node">
+                    <div class="text-xs font-semibold tracking-[2px] text-muted/50 uppercase mb-4">04</div>
+                    <div class="s-icon"><svg viewBox="0 0 24 24"><path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z"/><path d="M3 9V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v2"/><path d="M12 12v5"/><path d="M9 14h6"/></svg></div>
+                    <h3 class="text-base font-semibold text-white mb-2">Warehouse &amp; Storage</h3>
+                    <p class="text-sm text-muted leading-relaxed">Climate-controlled warehousing &amp; storage solutions across UAE.</p>
+                </div>
+                <!-- Card 05 -->
+                <div class="s-card scroll-reveal-node">
+                    <div class="text-xs font-semibold tracking-[2px] text-muted/50 uppercase mb-4">05</div>
+                    <div class="s-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93L17.66 6.34M4.93 4.93L6.34 6.34M12 2v2M12 20v2M4.93 19.07l1.41-1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2"/></svg></div>
+                    <h3 class="text-base font-semibold text-white mb-2">House &amp; Office Shifting</h3>
+                    <p class="text-sm text-muted leading-relaxed">Full-service shifting for residential and commercial spaces UAE-wide.</p>
+                </div>
+                <!-- Card 06 -->
+                <div class="s-card scroll-reveal-node">
+                    <div class="text-xs font-semibold tracking-[2px] text-muted/50 uppercase mb-4">06</div>
+                    <div class="s-icon"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+                    <h3 class="text-base font-semibold text-white mb-2">Dismantle &amp; Assembly</h3>
+                    <p class="text-sm text-muted leading-relaxed">Precise, careful, and damage-free furniture disassembly and reassembly.</p>
+                </div>
+            </div>
+
+            <!-- Context Centered WhatsApp CTA Button Integration -->
+            <div class="flex justify-center mt-12">
+                <a href="https://api.whatsapp.com/send/?phone=971556255690" target="_blank" class="flex items-center justify-center gap-2 rounded-full font-semibold px-8 py-4 bg-surface border border-stroke text-text-primary transition-all duration-300 hover:scale-105 hover:bg-bg custom-wa-btn accent-ring-hover">
+                    <span>WhatsApp Us</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- SECTION 4: REALLOCATED PRE-EXISTING FLEET OVERVIEW VISUALS -->
+    <section id="fleet" class="bg-bg py-16 md:py-24 border-t border-stroke">
+        <div class="max-w-[1200px] mx-auto px-6 md:px-10 lg:px-16 scroll-reveal-node">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                <div>
+                    <div class="flex items-center gap-3 text-xs text-muted uppercase tracking-[0.3em] mb-3">
+                        <div class="w-8 h-px bg-stroke"></div> Operational Scale
+                    </div>
+                    <h2 class="text-3xl md:text-5xl font-light tracking-tight">Our Premium Fleet & <span class="font-display italic">Standards</span></h2>
+                    <p class="text-sm text-muted mt-2">Equipped to fulfill logistics, heavy assembly, and comprehensive transits safely.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+                <div class="group relative md:col-span-7 bg-surface border border-stroke rounded-3xl overflow-hidden aspect-[4/3] md:aspect-auto md:h-[400px]">
+                    <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=1200&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" alt="Logistics Fleet">
+                    <div class="absolute inset-0 halftone-overlay opacity-20 mix-blend-multiply pointer-events-none"></div>
+                </div>
+                <div class="group relative md:col-span-5 bg-surface border border-stroke rounded-3xl overflow-hidden aspect-[4/3] md:aspect-auto md:h-[400px]">
+                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" alt="Secure Packing">
+                    <div class="absolute inset-0 halftone-overlay opacity-20 mix-blend-multiply pointer-events-none"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- SECTION 5: EXPLORATIONS (PARALLAX LOGISTICAL GRAPHICS) -->
+    <section id="explorations" class="relative min-h-[300vh] bg-bg">
+  <section id="gallery-section" class="relative w-full">
+    
+    <div id="pinned-layer" class="sticky top-0 h-screen w-full flex flex-col justify-center items-start px-6 md:px-16 lg:px-24 z-10 pointer-events-none">
+        <div class="w-full max-w-sm md:max-w-md pointer-events-auto js-animate-left opacity-0 -translate-x-12 transition-all duration-300">
+            <div class="text-xs text-blue-500 uppercase tracking-[0.3em] mb-3 font-semibold">Our Coverage &amp; Commitment</div>
+            <h2 class="text-4xl md:text-5xl font-light tracking-tight mb-6 leading-[1.15]">Seamless &amp; <br><span class="font-display italic text-text-primary">Trusted Relocations</span></h2>
+            <p class="text-sm md:text-[15px] text-muted mb-8 leading-relaxed font-light text-justify">
+                Every transition we execute is backed by structured zero-damage guarantees, engineered packing configurations, and continuous real-time safety monitoring metrics. We believe that relocation isn't just about shifting heavy assets; it's about delivering absolute peace of mind and preserving your lifestyle continuity during corporate or residential transits across the UAE. Our elite logistics network handles every checkpoint with meticulous care—from first box wrapped to final unboxing—ensuring your most valuable belongings remain safe and secure under our watch.
+            </p>
+        </div>
+    </div>
+
+    </section>
+        <div class="absolute inset-x-0 top-0 h-full max-w-[1400px] mx-auto px-6 z-20 pointer-events-none flex justify-end items-start pt-32 pb-32">
+            <div class="w-full md:w-1/2 grid grid-cols-2 gap-6 md:gap-12 pointer-events-auto">
+                <div id="parallax-col-left" class="flex flex-col gap-12 md:gap-24">
+                    <div class="exploration-card aspect-square max-w-[320px] rounded-2xl overflow-hidden bg-surface border border-stroke transform -rotate-3 hover:rotate-0 transition-transform duration-500">
+                        <img src="https://images.unsplash.com/photo-1516216628859-9bccecab13ca?q=80&w=500" class="w-full h-full object-cover" alt="Logistics view">
+                    </div>
+                    <div class="exploration-card aspect-square max-w-[320px] rounded-2xl overflow-hidden bg-surface border border-stroke transform rotate-2 hover:rotate-0 transition-transform duration-500">
+                        <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=500" class="w-full h-full object-cover" alt="Logistics view">
+                    </div>
+                </div>
+                <div id="parallax-col-right" class="flex flex-col gap-12 md:gap-24 pt-24 md:pt-48">
+                    <div class="exploration-card aspect-square max-w-[320px] rounded-2xl overflow-hidden bg-surface border border-stroke transform rotate-3 hover:rotate-0 transition-transform duration-500">
+                        <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=500" class="w-full h-full object-cover" alt="Logistics view">
+                    </div>
+                    <div class="exploration-card aspect-square max-w-[320px] rounded-2xl overflow-hidden bg-surface border border-stroke transform -rotate-2 hover:rotate-0 transition-transform duration-500">
+                        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=500" class="w-full h-full object-cover" alt="Logistics view">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- SECTION 6: METRICS AND STATS GRID -->
+    <section class="bg-bg border-t border-b border-stroke py-20 md:py-28">
+        <div class="max-w-[1200px] mx-auto px-6 md:px-10 lg:px-16">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+                <div class="flex flex-col items-start border-l border-stroke pl-6">
+                    <div class="text-4xl md:text-5xl font-display italic text-text-primary mb-2">15+</div>
+                    <div class="text-xs uppercase tracking-widest text-muted font-medium">Years Fleet Experience</div>
+                </div>
+                <div class="flex flex-col items-start border-l border-stroke pl-6">
+                    <div class="text-4xl md:text-5xl font-display italic text-text-primary mb-2">10k+</div>
+                    <div class="text-xs uppercase tracking-widest text-muted font-medium">Successful Moves</div>
+                </div>
+                <div class="flex flex-col items-start border-l border-stroke pl-6">
+                    <div class="text-4xl md:text-5xl font-display italic text-text-primary mb-2">100%</div>
+                    <div class="text-xs uppercase tracking-widest text-muted font-medium">Safe & Secure Guarantee</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section id="faq" class="relative bg-bg py-24 md:py-32 border-t border-stroke overflow-hidden">
+    
+    <div class="absolute inset-0 z-0 w-full h-full pointer-events-none">
+        <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=1920&auto=format&fit=crop" 
+             class="w-full h-full object-cover object-center opacity-85 filter brightness-[0.95] saturation-[1.1]" 
+             alt="Premium Safe & Secure Logistics Trucks">
+        <div class="absolute inset-0 bg-gradient-to-r from-bg via-bg/40 to-transparent"></div>
+        <div class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-bg to-transparent"></div>
+        <div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-bg to-transparent"></div>
+    </div>
+
+    <div class="relative z-10 max-w-[1200px] mx-auto px-6 md:px-10 lg:px-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+            
+            <div class="scroll-reveal-node md:sticky md:top-32 md:backdrop-blur-3xl md:bg-bg/10 md:p-8 md:rounded-3xl">
+                <div class="flex items-center gap-3 text-xs text-muted uppercase tracking-[0.3em] mb-4">
+                    <div class="w-8 h-px bg-stroke"></div> Got Questions?
+                </div>
+                <h2 class="text-4xl md:text-5xl font-light tracking-tight mb-6">Frequently<br>asked <span class="font-display italic text-text-primary">questions</span></h2>
+                <p class="text-sm text-muted leading-relaxed max-w-xs mb-8">Can't find an answer? Contact us directly — we're happy to help with any queries about your move.</p>
+                <a href="https://api.whatsapp.com/send/?phone=971556255690" target="_blank" class="group relative inline-flex items-center gap-2 rounded-full text-sm px-7 py-3.5 bg-text-primary text-bg font-medium transition-all duration-300 hover:scale-105 accent-ring-hover">
+                    Ask on WhatsApp
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+            
+            <div class="scroll-reveal-node flex flex-col gap-3">
+                
+                <div class="faq-item border border-stroke rounded-2xl overflow-hidden bg-surface/[0.04] backdrop-blur-xl shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] transition-all duration-300 hover:border-blue-500/40 hover:bg-gradient-to-r hover:from-blue-950/95 hover:to-black/95">
+                    <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-5 text-left group">
+                        <span class="text-sm font-medium text-white/90 group-hover:text-blue-400 transition-colors">What services does Safe and Secure Movers provide?</span>
+                        <div class="w-7 h-7 rounded-full border border-stroke bg-surface/[0.05] flex items-center justify-center flex-shrink-0 ml-4 transition-colors group-hover:border-blue-400/50 bg-black/20">
+                            <svg class="faq-icon-plus w-3 h-3 text-muted transition-transform duration-300 group-hover:text-blue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </div>
+                    </button>
+                    <div class="faq-answer max-h-0 opacity-0 overflow-hidden transition-all duration-300 ease-in-out">
+                        <p class="px-5 pb-5 text-sm text-slate-300 leading-relaxed">We offer comprehensive moving services including residential and commercial packing, local and international transportation, storage solutions, furniture assembly/disassembly, and relocation consulting.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item border border-stroke rounded-2xl overflow-hidden bg-surface/[0.04] backdrop-blur-xl shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] transition-all duration-300 hover:border-blue-500/40 hover:bg-gradient-to-r hover:from-blue-950/95 hover:to-black/95">
+                    <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-5 text-left group">
+                        <span class="text-sm font-medium text-white/90 group-hover:text-blue-400 transition-colors">Is Safe and Secure Movers licensed and insured?</span>
+                        <div class="w-7 h-7 rounded-full border border-stroke bg-surface/[0.05] flex items-center justify-center flex-shrink-0 ml-4 transition-colors group-hover:border-blue-400/50 bg-black/20">
+                            <svg class="faq-icon-plus w-3 h-3 text-muted transition-transform duration-300 group-hover:text-blue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </div>
+                    </button>
+                    <div class="faq-answer max-h-0 opacity-0 overflow-hidden transition-all duration-300 ease-in-out">
+                        <p class="px-5 pb-5 text-sm text-slate-300 leading-relaxed">Yes, we are fully licensed and insured. Our team adheres to industry standards ensuring the safety and security of your belongings throughout the entire moving process.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item border border-stroke rounded-2xl overflow-hidden bg-surface/[0.04] backdrop-blur-xl shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] transition-all duration-300 hover:border-blue-500/40 hover:bg-gradient-to-r hover:from-blue-950/95 hover:to-black/95">
+                    <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-5 text-left group">
+                        <span class="text-sm font-medium text-white/90 group-hover:text-blue-400 transition-colors">How do I request a quote for my move?</span>
+                        <div class="w-7 h-7 rounded-full border border-stroke bg-surface/[0.05] flex items-center justify-center flex-shrink-0 ml-4 transition-colors group-hover:border-blue-400/50 bg-black/20">
+                            <svg class="faq-icon-plus w-3 h-3 text-muted transition-transform duration-300 group-hover:text-blue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </div>
+                    </button>
+                    <div class="faq-answer max-h-0 opacity-0 overflow-hidden transition-all duration-300 ease-in-out">
+                        <p class="px-5 pb-5 text-sm text-slate-300 leading-relaxed">Fill out our online quote form on this page, or contact our customer service team via WhatsApp. Provide move details and we'll give you a personalized, transparent quote.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item border border-stroke rounded-2xl overflow-hidden bg-surface/[0.04] backdrop-blur-xl shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] transition-all duration-300 hover:border-blue-500/40 hover:bg-gradient-to-r hover:from-blue-950/95 hover:to-black/95">
+                    <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-5 text-left group">
+                        <span class="text-sm font-medium text-white/90 group-hover:text-blue-400 transition-colors">What factors affect the cost of a move?</span>
+                        <div class="w-7 h-7 rounded-full border border-stroke bg-surface/[0.05] flex items-center justify-center flex-shrink-0 ml-4 transition-colors group-hover:border-blue-400/50 bg-black/20">
+                            <svg class="faq-icon-plus w-3 h-3 text-muted transition-transform duration-300 group-hover:text-blue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </div>
+                    </button>
+                    <div class="faq-answer max-h-0 opacity-0 overflow-hidden transition-all duration-300 ease-in-out">
+                        <p class="px-5 pb-5 text-sm text-slate-300 leading-relaxed">The cost is influenced by distance, volume of items, packing services required, and any special handling needs like fragile items, storage, or dismantling of heavy furniture.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item border border-stroke rounded-2xl overflow-hidden bg-surface/[0.04] backdrop-blur-xl shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] transition-all duration-300 hover:border-blue-500/40 hover:bg-gradient-to-r hover:from-blue-950/95 hover:to-black/95">
+                    <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-5 text-left group">
+                        <span class="text-sm font-medium text-white/90 group-hover:text-blue-400 transition-colors">Can you assist with international relocations?</span>
+                        <div class="w-7 h-7 rounded-full border border-stroke bg-surface/[0.05] flex items-center justify-center flex-shrink-0 ml-4 transition-colors group-hover:border-blue-400/50 bg-black/20">
+                            <svg class="faq-icon-plus w-3 h-3 text-muted transition-transform duration-300 group-hover:text-blue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </div>
+                    </button>
+                    <div class="faq-answer max-h-0 opacity-0 overflow-hidden transition-all duration-300 ease-in-out">
+                        <p class="px-5 pb-5 text-sm text-slate-300 leading-relaxed">Absolutely! We specialize in international moves and can assist with logistics, documentation, customs clearance, and transportation to or from the UAE.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- SECTION 7: CONTACT AND FOOTER STRIP WITH MARQUEE -->
+    <section id="contact" class="relative bg-bg pt-24 pb-12 overflow-hidden min-h-screen flex flex-col justify-between">
+        <!-- Inverted Vector Video Media Player Module Layer -->
+        <div class="absolute inset-0 -z-30 w-full h-full overflow-hidden scale-y-[-1]">
+            <video id="footer-video" autoplay muted loop playsinline class="absolute top-1/2 left-1/2 min-w-full min-h-full object-cover -translate-x-1/2 -translate-y-1/2"></video>
+            <div class="absolute inset-0 bg-black/60"></div>
+        </div>
+
+        <!-- Dynamic Content Services Marquee Strip Track Module -->
+        <div class="w-full overflow-hidden border-t border-b border-white/5 py-5 bg-bg/50 backdrop-blur-sm select-none">
+            <div id="marquee-track" class="whitespace-nowrap flex text-2xl md:text-4xl tracking-[0.15em] font-light text-text-primary/30 uppercase items-center gap-8">
+                <!-- Javascript procedural array string mapping items loop output -->
+            </div>
+        </div>
+
+        <!-- Hyper-Link Center Core Block -->
+        <div class="max-w-4xl mx-auto text-center px-6 my-auto flex flex-col items-center">
+            <h2 class="text-4xl md:text-7xl font-light tracking-tight mb-10">Ready for a stress-free <br><span class="font-display italic text-text-primary">relocation?</span></h2>
+            <a href="https://api.whatsapp.com/send/?phone=971556255690" target="_blank" class="group relative rounded-full text-sm md:text-base px-8 py-4.5 bg-surface border border-stroke text-text-primary tracking-wider font-medium overflow-visible accent-ring-hover">
+                Get Free Quote via WhatsApp
+            </a>
+        </div>
+
+        <!-- Structural Navigation Base Data Strip Line -->
+        <div class="max-w-[1200px] mx-auto w-full px-6 md:px-16 flex flex-col sm:flex-row items-center justify-between gap-6 border-t border-stroke pt-8 text-xs text-muted z-10">
+            <div class="text-muted/60">
+                © 2026 Safe & Secure Movers Dubai. All rights reserved.
+            </div>
+            
+            <div class="flex items-center gap-2 select-none">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                </span>
+                <span class="tracking-wide">Active across UAE (24/7)</span>
+            </div>
+        </div>
+    </section>
+
+<section id="quote" class="relative py-24 md:py-32 overflow-hidden">
+    <div class="absolute inset-0 -z-10">
+        <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1600&q=80" class="w-full h-full object-cover" alt="bg">
+        <div class="absolute inset-0 bg-bg/88"></div>
+    </div>
+    <div class="max-w-[1200px] mx-auto px-6 md:px-10 lg:px-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+            <!-- Left -->
+            <div class="scroll-reveal-node">
+                <div class="flex items-center gap-3 text-xs text-muted uppercase tracking-[0.3em] mb-4">
+                    <div class="w-8 h-px bg-stroke"></div> Free Estimate
+                </div>
+                <h2 class="text-4xl md:text-5xl font-light tracking-tight mb-6">Get your free<br>moving <span class="font-display italic text-orange-400">quote</span></h2>
+                <p class="text-sm text-muted leading-relaxed max-w-xs mb-8">Fill in your details and we'll get back to you within 24 hours with a transparent, competitive price.</p>
+                <div class="flex flex-col gap-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center flex-shrink-0">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f5a623" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        </div>
+                        <div>
+                            <div class="text-sm font-semibold text-white">+971 52 440 2005</div>
+                            <div class="text-xs text-muted">Call or WhatsApp</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center flex-shrink-0">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f5a623" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        </div>
+                        <div>
+                            <div class="text-sm font-semibold text-white">info@safeandsecuremovers.com</div>
+                            <div class="text-xs text-muted">Email us anytime</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Form right -->
+            <div class="scroll-reveal-node bg-surface/60 backdrop-blur-md border border-stroke rounded-3xl p-8">
+                <div class="grid grid-cols-2 gap-4 mb-4">
+                    <div><label class="text-xs text-muted mb-2 block uppercase tracking-wider">Full Name</label><input type="text" placeholder="Your name" class="q-input"></div>
+                    <div><label class="text-xs text-muted mb-2 block uppercase tracking-wider">Phone Number</label><input type="tel" placeholder="+971 XX XXX XXXX" class="q-input"></div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 mb-4">
+                    <div><label class="text-xs text-muted mb-2 block uppercase tracking-wider">Email Address</label><input type="email" placeholder="your@email.com" class="q-input"></div>
+                    <div><label class="text-xs text-muted mb-2 block uppercase tracking-wider">Moving Date</label><input type="date" class="q-input"></div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 mb-4">
+                    <div><label class="text-xs text-muted mb-2 block uppercase tracking-wider">Moving From</label><input type="text" placeholder="Current location" class="q-input"></div>
+                    <div><label class="text-xs text-muted mb-2 block uppercase tracking-wider">Moving To</label><input type="text" placeholder="Destination" class="q-input"></div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                    <div><label class="text-xs text-muted mb-2 block uppercase tracking-wider">Type of Move</label>
+                        <select class="q-input"><option>Select type</option><option>Residential</option><option>Commercial</option><option>Studio / Office</option><option>International</option></select>
+                    </div>
+                    <div><label class="text-xs text-muted mb-2 block uppercase tracking-wider">Long Distance?</label>
+                        <select class="q-input"><option>Select</option><option>Yes</option><option>No</option></select>
+                    </div>
+                </div>
+                <button id="submitBtn" onclick="submitForm(this)" class="w-full accent-gradient text-white font-semibold rounded-2xl py-4 text-sm tracking-wide transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-orange-500/20">
+                    Request Your Free Quote →
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+<footer>
+  <section id="contact" class="relative bg-bg pt-24 pb-12 overflow-hidden border-t border-stroke">
+    <div class="absolute inset-0 -z-10 overflow-hidden scale-y-[-1] opacity-30">
+        <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1600&q=80" class="w-full h-full object-cover" alt="">
+        <div class="absolute inset-0 bg-bg/70"></div>
+    </div>
+
+    <div class="max-w-4xl mx-auto text-center px-6 mb-24">
+        <h2 class="text-4xl md:text-7xl font-light tracking-tight mb-10">Ready to move<br><span class="font-display italic text-blue-500">stress-free?</span></h2>
+        
+        <a href="https://api.whatsapp.com/send/?phone=971556255690" target="_blank" class="group relative rounded-full text-sm md:text-base px-8 py-4 bg-surface border border-stroke text-text-primary tracking-wider font-medium overflow-visible transition-all duration-300 hover:bg-blue-600 hover:text-white hover:border-blue-500 inline-flex items-center gap-2">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="text-blue-500 group-hover:text-white transition-colors"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            +971 52 440 2005
+        </a>
+    </div>
+
+    <div class="max-w-[1200px] mx-auto px-6 md:px-10 lg:px-16">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mb-16">
+            
+            <div class="flex flex-col items-center sm:items-start text-center sm:text-left gap-4">
+                <div class="w-full max-w-[180px] h-20 rounded-xl border border-stroke border-dashed bg-surface/30 flex items-center justify-center p-3 group transition-colors hover:border-blue-500/50">
+                    <img src="" alt="YOUR LOGO HERE" class="max-w-full max-h-full object-contain hidden">
+                    <span class="text-xs text-muted tracking-widest font-mono group-hover:text-white transition-colors">[ LARGE LOGO ]</span>
+                </div>
+
+                <div>
+                    <div class="text-2xl font-bold text-white tracking-tight">Safe &amp; Secure</div>
+                    <div class="text-sm text-blue-500 font-medium">Movers Dubai</div>
+                </div>
+                
+                <p class="text-sm text-muted leading-relaxed">Dedicated to making your move seamless and secure across UAE. Trusted since 2014.</p>
+                
+                <div class="flex gap-3 pt-2">
+                    <a href="https://www.facebook.com/people/Safe-Secure-Movers/61564820282959/" target="_blank" class="w-8 h-8 rounded-full border border-stroke flex items-center justify-center text-muted hover:text-blue-400 hover:border-blue-500/50 transition-colors">
+                        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                    </a>
+                    <a href="#" class="w-8 h-8 rounded-full border border-stroke flex items-center justify-center text-muted hover:text-blue-400 hover:border-blue-500/50 transition-colors">
+                        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    </a>
+                    <a href="https://api.whatsapp.com/send/?phone=971556255690" target="_blank" class="w-8 h-8 rounded-full border border-stroke flex items-center justify-center text-muted hover:text-blue-400 hover:border-blue-500/50 transition-colors">
+                        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="text-center sm:text-left">
+                <div class="text-xs uppercase tracking-widest text-muted mb-4">Services</div>
+                <ul class="flex flex-col gap-2">
+                    <li><a href="#services" class="text-sm text-muted hover:text-blue-400 transition-colors">Transportation Service</a></li>
+                    <li><a href="#services" class="text-sm text-muted hover:text-blue-400 transition-colors">Household Moving</a></li>
+                    <li><a href="#services" class="text-sm text-muted hover:text-blue-400 transition-colors">Commercial Movers</a></li>
+                    <li><a href="#services" class="text-sm text-muted hover:text-blue-400 transition-colors">Warehouse &amp; Storage</a></li>
+                    <li><a href="#services" class="text-sm text-muted hover:text-blue-400 transition-colors">House &amp; Office Shifting</a></li>
+                    <li><a href="#services" class="text-sm text-muted hover:text-blue-400 transition-colors">Dismantling Service</a></li>
+                </ul>
+            </div>
+
+            <div class="text-center sm:text-left">
+                <div class="text-xs uppercase tracking-widest text-muted mb-4">Quick Links</div>
+                <ul class="flex flex-col gap-2">
+                    <li><a href="#home" class="text-sm text-muted hover:text-blue-400 transition-colors">Home</a></li>
+                    <li><a href="#about" class="text-sm text-muted hover:text-blue-400 transition-colors">About Us</a></li>
+                    <li><a href="#services" class="text-sm text-muted hover:text-blue-400 transition-colors">Services</a></li>
+                    <li><a href="#faq" class="text-sm text-muted hover:text-blue-400 transition-colors">FAQ</a></li>
+                    <li><a href="#quote" class="text-sm text-muted hover:text-blue-400 transition-colors">Get Quote</a></li>
+                </ul>
+            </div>
+
+            <div class="flex flex-col justify-between h-full min-h-[200px] text-center sm:text-left items-center sm:items-start">
+                <div>
+                    <div class="text-xs uppercase tracking-widest text-muted mb-4">Contact</div>
+                    <ul class="flex flex-col gap-3 mb-6 items-center sm:items-start">
+                        <li class="flex items-start justify-center sm:justify-start gap-2 text-sm text-muted"><svg class="w-4 h-4 mt-0.5 flex-shrink-0 text-blue-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>United Arab Emirates</li>
+                        <li class="flex items-start justify-center sm:justify-start gap-2 text-sm text-muted"><svg class="w-4 h-4 mt-0.5 flex-shrink-0 text-blue-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+971 52 440 2005</li>
+                        <li class="flex items-start justify-center sm:justify-start gap-2 text-sm text-muted"><svg class="w-4 h-4 mt-0.5 flex-shrink-0 text-blue-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>info@safeandsecuremovers.com</li>
+                    </ul>
+                </div>
+
+                <a href="https://api.whatsapp.com/send/?phone=971556255690" target="_blank" class="group relative inline-flex items-center justify-center gap-2 rounded-full text-sm px-6 py-3 bg-white text-bg font-medium transition-all duration-300 hover:bg-blue-600 hover:text-white w-full max-w-[220px] mx-auto sm:mx-0">
+                    Ask on WhatsApp
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-blue-600 group-hover:text-white transition-colors"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-stroke pt-8 text-xs text-muted">
+            <p>© 2026 <a href="#" class="hover:text-blue-400 transition-colors">safeandsecuremovers.com</a> — All rights reserved</p>
+            <div class="flex items-center gap-2">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                </span>
+                <span class="tracking-wide">Available for moves today</span>
+            </div>
+        </div>
+    </div>
+  </section>
+</footer>
+    <!-- CLIENT SIDE INTERACTIVE CONTROLLER JAVASCRIPT ENGINE -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            gsap.registerPlugin(ScrollTrigger);
+
+            const MUX_STREAM_URL = "https://stream.mux.com/Aa02T7oM1wH5Mk5EEVDYhbZ1ChcdhRsS2m1NYyx4Ua1g.m3u8";
+
+            const streamMediaToId = (videoId) => {
+                const targetMediaNode = document.getElementById(videoId);
+                if (!targetMediaNode) return;
+
+                if (Hls.isSupported()) {
+                    const hlsPipelineInstance = new Hls({ maxMaxBufferLength: 10 });
+                    hlsPipelineInstance.loadSource(MUX_STREAM_URL);
+                    hlsPipelineInstance.attachMedia(targetMediaNode);
+                } else if (targetMediaNode.canPlayType('application/vnd.apple.mpegurl')) {
+                    targetMediaNode.src = MUX_STREAM_URL;
+                }
+            };
+            streamMediaToId("hero-video");
+            streamMediaToId("footer-video");
+
+
+            // --- ENGINE LOADER PROGRESS WORD SEQUENCING MATRIX ---
+            const loaderEl = document.getElementById("loader");
+            const wordTargetNode = document.getElementById("loader-word-container");
+            const counterNode = document.getElementById("loader-counter");
+            const progressBarInnerNode = document.getElementById("loader-progress");
+            
+            const cyclingLexicon = ["Packers", "Movers", "Transport"];
+            let activeLexiconIndex = 0;
+
+            cyclingLexicon.forEach((term, idx) => {
+                const layer = document.createElement("div");
+                layer.className = `absolute inset-0 text-4xl md:text-6xl lg:text-7xl font-display italic text-text-primary/80 transition-all duration-500 transform flex items-center ${idx === 0 ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`;
+                layer.id = `word-node-${idx}`;
+                layer.textContent = term;
+                wordTargetNode.appendChild(layer);
+            });
+
+            const textCycleTimerRef = setInterval(() => {
+                const currentEl = document.getElementById(`word-node-${activeLexiconIndex}`);
+                activeLexiconIndex = (activeLexiconIndex + 1) % cyclingLexicon.length;
+                const incomingEl = document.getElementById(`word-node-${activeLexiconIndex}`);
+
+                if (currentEl && incomingEl) {
+                    currentEl.className = "absolute inset-0 text-4xl md:text-6xl lg:text-7xl font-display italic text-text-primary/80 transition-all duration-500 transform flex items-center -translate-y-8 opacity-0";
+                    incomingEl.className = "absolute inset-0 text-4xl md:text-6xl lg:text-7xl font-display italic text-text-primary/80 transition-all duration-500 transform flex items-center translate-y-0 opacity-100";
+                }
+            }, 900);
+
+            let renderStartTime = null;
+            const targetDuration = 2700;
+
+            function processFrameCounter(timestamp) {
+                if (!renderStartTime) renderStartTime = timestamp;
+                const elapsedTimeline = timestamp - renderStartTime;
+                const currentPercentage = Math.min(Math.floor((elapsedTimeline / targetDuration) * 100), 100);
+
+                counterNode.textContent = String(currentPercentage).padStart(3, "0");
+                progressBarInnerNode.style.width = `${currentPercentage}%`;
+
+                if (elapsedTimeline < targetDuration) {
+                    window.requestAnimationFrame(processFrameCounter);
+                } else {
+                    clearInterval(textCycleTimerRef);
+                    setTimeout(() => {
+                        gsap.to(loaderEl, {
+                            opacity: 0,
+                            duration: 0.5,
+                            ease: "power2.inOut",
+                            onComplete: () => {
+                                loaderEl.style.display = "none";
+                                initEntranceAnimations();
+                            }
+                        });
+                    }, 400);
+                }
+            }
+            window.requestAnimationFrame(processFrameCounter);
+
+            gsap.fromTo("#loader-eyebrow", { y: -20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" });
+
+
+            // --- GSAP REVEAL MAIN ENTRANCE PIPELINE ---
+            function initEntranceAnimations() {
+                const heroTimeline = gsap.timeline({ defaults: { ease: "power3.out" } });
+                
+                heroTimeline.fromTo(".name-reveal", 
+                    { opacity: 0, y: 50 }, 
+                    { opacity: 1, y: 0, duration: 1.2, delay: 0.1 }
+                );
+                
+                heroTimeline.fromTo(".blur-in", 
+                    { opacity: 0, y: 20, filter: "blur(10px)" }, 
+                    { opacity: 1, y: 0, filter: "blur(0px)", duration: 1, stagger: 0.1 },
+                    "-=1.0"
+                );
+
+                initScrollTriggerPipelines();
+                initRoleStringCyclingLoop();
+            }
+
+
+            // --- DYNAMIC ROLES STRINGS CYCLING LOOP ---
+            const rolesSequence = ["Relocation", "Logistics", "Packing", "Storage"];
+            let activeRoleIndex = 0;
+            const dynamicRoleContainerNode = document.getElementById("dynamic-role");
+
+            function initRoleStringCyclingLoop() {
+                setInterval(() => {
+                    activeRoleIndex = (activeRoleIndex + 1) % rolesSequence.length;
+                    dynamicRoleContainerNode.className = "font-display italic text-text-primary inline-block text-left opacity-0 translate-y-[8px]";
+                    
+                    setTimeout(() => {
+                        dynamicRoleContainerNode.textContent = rolesSequence[activeRoleIndex];
+                        dynamicRoleContainerNode.className = "font-display italic text-text-primary inline-block text-left animate-role-fade-in";
+                    }, 50);
+                }, 2000);
+            }
+
+
+            // --- ENGINE SCROLL DRIVEN TRIGGERS PIPELINES ---
+            function initScrollTriggerPipelines() {
+                const navPillNode = document.getElementById("navbar-pill");
+                window.addEventListener("scroll", () => {
+                    if (window.scrollY > 100) {
+                        navPillNode.classList.add("shadow-xl", "shadow-black/20", "border-white/20");
+                    } else {
+                        navPillNode.classList.remove("shadow-xl", "shadow-black/20", "border-white/20");
+                    }
+                    synchronizeNavigationActiveNodes();
+                });
+
+                document.querySelectorAll(".scroll-reveal-node").forEach((node) => {
+                    gsap.fromTo(node, 
+                        { opacity: 0, y: 30 },
+                        {
+                            opacity: 1,
+                            y: 0,
+                            duration: 1,
+                            ease: [0.25, 0.1, 0.25, 1],
+                            scrollTrigger: {
+                                trigger: node,
+                                start: "top 85%",
+                                toggleActions: "play none none none"
+                            }
+                        }
+                    );
+                });
+
+                ScrollTrigger.create({
+                    trigger: "#explorations",
+                    start: "top top",
+                    end: "bottom bottom",
+                    pin: "#pinned-layer",
+                    pinSpacing: false
+                });
+
+                gsap.fromTo("#parallax-col-left", 
+                    { y: "0vh" },
+                    {
+                        y: "-35vh",
+                        scrollTrigger: {
+                            trigger: "#explorations",
+                            start: "top bottom",
+                            end: "bottom top",
+                            scrub: true
+                        }
+                    }
+                );
+
+                gsap.fromTo("#parallax-col-right", 
+                    { y: "0vh" },
+                    {
+                        y: "25vh",
+                        scrollTrigger: {
+                            trigger: "#explorations",
+                            start: "top bottom",
+                            end: "bottom top",
+                            scrub: true
+                        }
+                    }
+                );
+            }
+
+
+            // --- SEMANTIC NAVIGATION NAVIGATION ACTIVE CLASS SYNC ---
+            const sectionLayoutNodes = document.querySelectorAll("section");
+            const anchorPillElements = document.querySelectorAll(".nav-element");
+
+            function synchronizeNavigationActiveNodes() {
+                let focusedSectionId = "home";
+                sectionLayoutNodes.forEach((section) => {
+                    const dynamicOffsetTrigger = section.offsetTop - 260;
+                    if (window.scrollY >= dynamicOffsetTrigger) {
+                        focusedSectionId = section.getAttribute("id");
+                    }
+                });
+
+                anchorPillElements.forEach((anchor) => {
+                    anchor.className = "nav-element text-xs sm:text-sm rounded-full px-3 sm:px-4 py-1.5 sm:py-2 text-muted hover:text-text-primary hover:bg-stroke/50 transition-all duration-200";
+                    if (anchor.getAttribute("href") === `#${focusedSectionId}`) {
+                        anchor.className = "nav-element text-xs sm:text-sm rounded-full px-3 sm:px-4 py-1.5 sm:py-2 text-text-primary bg-stroke/50 font-medium transition-all duration-200";
+                    }
+                });
+            }
+
+
+            // --- DRIBBLING LOGISTICAL MAPPED MARQUEE SERVICES PIPELINE ---
+            const trackTargetNode = document.getElementById("marquee-track");
+            
+            // Explicit requested content array items list injection mapping logic
+            const servicesDataItems = [
+                "Residential Moves", "Commercial Packing", "Furniture Assembly", 
+                "Secure Storage", "International Shipping", "Office Shifting", "Dismantling Service"
+            ];
+            
+            let htmlSegmentString = "";
+            servicesDataItems.forEach(service => {
+                htmlSegmentString += `<span class="mx-8 inline-flex items-center gap-4 text-white/40"><span>${service}</span><span class="text-xs text-neutral-700">•</span></span>`;
+            });
+
+            trackTargetNode.innerHTML = `
+                <div class="marquee-scroller-inner inline-block">${htmlSegmentString}${htmlSegmentString}</div>
+            `;
+            
+            gsap.to(".marquee-scroller-inner", {
+                xPercent: -50,
+                duration: 25,
+                ease: "none",
+                repeat: -1
+            });
+        });
+    </script>
+    <script>
+        // --- ACCORDION FAQ SYSTEM TOGGLE CONTROLLER ---
+function toggleFaq(buttonElement) {
+    const activeItemContainer = buttonElement.parentElement;
+    const answerNode = buttonElement.nextElementSibling;
+    const rotationIconNode = buttonElement.querySelector('.faq-icon-plus');
+
+    // Close other sibling open items for premium seamless feel
+    document.querySelectorAll('.faq-item').forEach(item => {
+        if (item !== activeItemContainer) {
+            const openAnswer = item.querySelector('.faq-answer');
+            const openIcon = item.querySelector('.faq-icon-plus');
+            if (openAnswer) {
+                openAnswer.style.maxHeight = null;
+                openAnswer.style.opacity = "0";
+            }
+            if (openIcon) {
+                openIcon.style.transform = "rotate(0deg)";
+            }
+            item.classList.remove('border-white/20');
+        }
+    });
+
+    // Toggle target state metrics
+    if (answerNode.style.maxHeight) {
+        answerNode.style.maxHeight = null;
+        answerNode.style.opacity = "0";
+        if (rotationIconNode) rotationIconNode.style.transform = "rotate(0deg)";
+        activeItemContainer.classList.remove('border-white/20');
+    } else {
+        answerNode.style.maxHeight = answerNode.scrollHeight + "px";
+        answerNode.style.opacity = "1";
+        if (rotationIconNode) rotationIconNode.style.transform = "rotate(45deg)";
+        activeItemContainer.classList.add('border-white/20');
+    }
+}
+    </script>
+    <script>
+  // Ensure GSAP and ScrollTrigger are registered
+gsap.registerPlugin(ScrollTrigger);
+
+// Instantly trigger animation as soon as the section / first image enters
+gsap.to(".js-animate-left", {
+    scrollTrigger: {
+        trigger: "#pinned-layer", 
+        start: "top 80%",          // Isse text screen ke 80% niche aate hi (yaani bohot jaldi) trigger ho jayega
+        toggleActions: "play reverse play reverse", 
+    },
+    x: 0,                         
+    opacity: 1,                   
+    duration: 0.5,                // Animation speed ko 0.8s se kam karke 0.5s kar diya taaki jaldi aaye
+    ease: "power3.out"            // Thoda zyada snappy aur fast ease use kiya hai
+});
+    </script>
 </body>
 </html>

@@ -1,12 +1,11 @@
-function bounceElement(selector, speed = "medium") {
-  const el = document.querySelector(selector);
+const lenis = new Lenis({
+  duration: 1.2,
+  smoothWheel: true
+});
 
-  el.classList.remove("bounce", "slow", "medium", "fast");
-  void el.offsetWidth; // animation restart
-
-  el.classList.add("bounce", speed);
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
 }
-// Usage
-bounceElement(".box", "slow");
-bounceElement(".box", "medium");
-bounceElement(".box", "fast");
+
+requestAnimationFrame(raf);
