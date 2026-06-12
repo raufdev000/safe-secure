@@ -3,147 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Safe & Secure Movers Dubai — No. 1 Transport Service</title>
-  
-   <head>
-  <!-- Fonts pehle load hon -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Safe & Secure Movers Dubai — Professional Moving Services UAE</title>
 
-  <!-- Local Tailwind CSS -->
-  <link rel="stylesheet" href="output.css">
-  
-  <!-- Tailwind config HATAO ye line bilkul: -->
-  <!-- <script src="https://cdn.tailwindcss.com"></script> DELETE -->
-</head>
+    <!-- 1. DNS Prefetch — sabse pehle -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
 
-    <!-- Global Custom Stylesheets & Keyframes -->
+    <!-- 2. Hero image preload — LCP fix -->
+    <link rel="preload" as="image" 
+          href="YOUR_HERO_IMAGE.jpg" 
+          fetchpriority="high">
+
+    <!-- 3. CSS pehle -->
+    <link rel="stylesheet" href="output.css">
+
+    <!-- 4. Fonts — ASYNC (non-blocking) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" 
+          href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@300;400;500;600;700&display=swap"
+          onload="this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@300;400;500;600;700&display=swap">
+    </noscript>
+
+    <!-- 5. GSAP — defer se load (non-blocking) -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+
     <style>
+        /* Critical CSS inline — font-face fallback taake FOUT na ho */
+        body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+        .font-display { font-family: 'Instrument Serif', Georgia, serif; }
+
         :root {
-            --bg: 0 0% 4%;
-            --surface: 0 0% 8%;
+            --bg: 20 10% 5%;
+            --surface: 20 8% 10%;
             --text: 0 0% 96%;
             --muted: 0 0% 53%;
-            --stroke: 0 0% 12%;
-            --accent: 0 0% 96%;
+            --stroke: 20 5% 14%;
         }
 
-        body {
-            background-color: hsl(var(--bg));
-            color: hsl(var(--text));
-            overflow-x: hidden;
-        }
+.s-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 28px;
+    transition: all 0.3s ease;
+}
 
-        /* Accent Gradient System Utilities */
-        .accent-gradient {
-            background: linear-gradient(90deg, #89AACC 0%, #4E85BF 100%);
-        }
+.s-card:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(137, 170, 204, 0.4);
+    transform: translateY(-4px);
+}
 
-        .accent-ring-hover {
-            position: relative;
-            transition: all 0.3s ease;
-        }
-        .accent-ring-hover::before {
-            content: '';
-            position: absolute;
-            inset: -2px;
-            background: linear-gradient(90deg, #89AACC 0%, #4E85BF 100%);
-            border-radius: inherit;
-            z-index: -1;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        .accent-ring-hover:hover::before {
-            opacity: 1;
-        }
+.s-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(78, 133, 191, 0.15);
+    border: 1px solid rgba(78, 133, 191, 0.3);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4px;
+}
 
-        /* Specified Keyframe Utility Animations */
-        @keyframes scroll-down {
-            0% { transform: translateY(-100%); }
-            100% { transform: translateY(200%); }
-        }
-        .animate-scroll-down {
-            animation: scroll-down 1.5s ease-in-out infinite;
-        }
+.s-icon svg {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: #89AACC;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    margin-bottom: 0;
+}
 
-        @keyframes role-fade-in {
-            0% { opacity: 0; transform: translateY(8px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-        .animate-role-fade-in {
-            animation: role-fade-in 0.4s ease-out forwards;
-        }
+.s-num {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    color: rgba(255, 255, 255, 0.25);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
 
-        @keyframes gradient-shift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        .animate-gradient-shift {
-            background-size: 200% 200%;
-            animation: gradient-shift 6s ease infinite;
-        }
+.s-card h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    margin: 8px 0 6px;
+}
 
-        /* Bento Grid Halftone Print System */
-        .halftone-overlay {
-            background-image: radial-gradient(circle, #000 1px, transparent 1px);
-            background-size: 4px 4px;
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: hsl(var(--bg));
-        }
-        ::-webkit-scrollbar-thumb {
-            background: hsl(var(--stroke));
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: hsl(var(--muted));
-        }
-
-        /* Service Cards Internal Icons Layout Styling */
-        .s-icon svg {
-            width: 32px;
-            height: 32px;
-            fill: none;
-            stroke: #4E85BF;
-            stroke-width: 1.5;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            margin-bottom: 16px;
-        }
-        .s-card {
-            background: hsl(var(--surface));
-            border: 1px solid hsl(var(--stroke));
-            border-radius: 24px;
-            padding: 24px;
-            transition: all 0.3s ease;
-        }
-        .s-card:hover {
-            border-color: #89AACC;
-            background: hsl(var(--bg));
-            transform: translateY(-2px);
-        }
-           .q-input {
-            width: 100%;
-            background: hsl(var(--surface));
-            border: 1px solid hsl(var(--stroke));
-            border-radius: 12px;
-            padding: 12px 16px;
-            font-size: 14px;
-            color: hsl(var(--text));
-            outline: none;
-            transition: border-color 0.2s;
-            font-family: 'Inter', sans-serif;
-        }
-        .q-input:focus { border-color: #f5a623; }
-        .q-input option { background: hsl(20,8%,10%); }
-
+.s-card p {
+    font-size: 13.5px;
+    color: rgba(255, 255, 255, 0.55);
+    line-height: 1.65;
+    margin: 0;
+}
     </style>
 </head>
 <body class="font-body text-text-primary bg-bg antialiased selection:bg-text-primary selection:text-bg">
@@ -720,283 +683,294 @@
     </div>
   </section>
 </footer>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            gsap.registerPlugin(ScrollTrigger);
+<!-- BODY KE BILKUL END MEIN — closing </body> se pehle -->
+<script>
+// ===== VIDEO — alag, load pe =====
+window.addEventListener('load', function() {
+    const MUX_STREAM_URL = "https://stream.mux.com/Aa02T7oM1wH5Mk5EEVDYhbZ1ChcdhRsS2m1NYyx4Ua1g.m3u8";
+    function streamMediaToId(videoId) {
+        const vid = document.getElementById(videoId);
+        if (!vid) return;
+        if (typeof Hls !== 'undefined' && Hls.isSupported()) {
+            const hls = new Hls({ maxMaxBufferLength: 10, startLevel: -1 });
+            hls.loadSource(MUX_STREAM_URL);
+            hls.attachMedia(vid);
+        } else if (vid.canPlayType('application/vnd.apple.mpegurl')) {
+            vid.src = MUX_STREAM_URL;
+        }
+    }
+    streamMediaToId("hero-video");
+    streamMediaToId("footer-video");
+});
 
-            const MUX_STREAM_URL = "https://stream.mux.com/Aa02T7oM1wH5Mk5EEVDYhbZ1ChcdhRsS2m1NYyx4Ua1g.m3u8";
+// ===== ANIMATIONS — DOMContentLoaded pe (fast) =====
+document.addEventListener("DOMContentLoaded", function() {
 
-            const streamMediaToId = (videoId) => {
-                const targetMediaNode = document.getElementById(videoId);
-                if (!targetMediaNode) return;
+    // GSAP ready hone ka wait karo (defer ki wajah se)
+    function waitForGSAP(cb) {
+        if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+            gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+            cb();
+        } else {
+            setTimeout(() => waitForGSAP(cb), 30);
+        }
+    }
 
-                if (Hls.isSupported()) {
-                    const hlsPipelineInstance = new Hls({ maxMaxBufferLength: 10 });
-                    hlsPipelineInstance.loadSource(MUX_STREAM_URL);
-                    hlsPipelineInstance.attachMedia(targetMediaNode);
-                } else if (targetMediaNode.canPlayType('application/vnd.apple.mpegurl')) {
-                    targetMediaNode.src = MUX_STREAM_URL;
-                }
-            };
-            streamMediaToId("hero-video");
-            streamMediaToId("footer-video");
-            // --- ENGINE LOADER PROGRESS WORD SEQUENCING MATRIX ---
-            const loaderEl = document.getElementById("loader");
-            const wordTargetNode = document.getElementById("loader-word-container");
-            const counterNode = document.getElementById("loader-counter");  const progressBarInnerNode = document.getElementById("loader-progress"); const cyclingLexicon = ["Packers", "Movers", "Transport"];        let activeLexiconIndex = 0;
-            cyclingLexicon.forEach((term, idx) => {
-                const layer = document.createElement("div");
-                layer.className = `absolute inset-0 text-4xl md:text-6xl lg:text-7xl font-display italic text-text-primary/80 transition-all duration-500 transform flex items-center ${idx === 0 ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`;
-                layer.id = `word-node-${idx}`;
-                layer.textContent = term;
-                wordTargetNode.appendChild(layer);
-            });
-            const textCycleTimerRef = setInterval(() => {
-                const currentEl = document.getElementById(`word-node-${activeLexiconIndex}`);
-                activeLexiconIndex = (activeLexiconIndex + 1) % cyclingLexicon.length;
-                const incomingEl = document.getElementById(`word-node-${activeLexiconIndex}`);
+    waitForGSAP(function() {
 
-                if (currentEl && incomingEl) {
-                    currentEl.className = "absolute inset-0 text-4xl md:text-6xl lg:text-7xl font-display italic text-text-primary/80 transition-all duration-500 transform flex items-center -translate-y-8 opacity-0";
-                    incomingEl.className = "absolute inset-0 text-4xl md:text-6xl lg:text-7xl font-display italic text-text-primary/80 transition-all duration-500 transform flex items-center translate-y-0 opacity-100";
-                }}, 900); let renderStartTime = null;
-            const targetDuration = 2700;
+    // ===== LOADER =====
+    const loaderEl = document.getElementById("loader");
+    const wordContainer = document.getElementById("loader-word-container");
+    const counterNode = document.getElementById("loader-counter");
+    const progressBar = document.getElementById("loader-progress");
 
-            function processFrameCounter(timestamp) {
-                if (!renderStartTime) renderStartTime = timestamp;
-                const elapsedTimeline = timestamp - renderStartTime;
-                const currentPercentage = Math.min(Math.floor((elapsedTimeline / targetDuration) * 100), 100);
+    const words = ["Packers", "Movers", "Transport"];
+    let wordIndex = 0;
 
-                counterNode.textContent = String(currentPercentage).padStart(3, "0");
-                progressBarInnerNode.style.width = `${currentPercentage}%`;
+    words.forEach((word, idx) => {
+        const el = document.createElement("div");
+        el.className = `absolute inset-0 text-4xl md:text-6xl lg:text-7xl font-display italic text-text-primary/80 transition-all duration-500 transform flex items-center ${idx === 0 ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`;
+        el.id = `word-node-${idx}`;
+        el.textContent = word;
+        wordContainer.appendChild(el);
+    });
 
-                if (elapsedTimeline < targetDuration) {
-                    window.requestAnimationFrame(processFrameCounter);
+    const cycleInterval = setInterval(() => {
+        const cur = document.getElementById(`word-node-${wordIndex}`);
+        wordIndex = (wordIndex + 1) % words.length;
+        const next = document.getElementById(`word-node-${wordIndex}`);
+        if (cur && next) {
+            cur.className = cur.className.replace('translate-y-0 opacity-100', '-translate-y-8 opacity-0');
+            next.className = next.className.replace('translate-y-8 opacity-0', 'translate-y-0 opacity-100');
+        }
+    }, 900);
+
+    let startTime = null;
+    const LOADER_DURATION = 2700; // Original wala
+
+    function tick(ts) {
+        if (!startTime) startTime = ts;
+        const elapsed = ts - startTime;
+        const pct = Math.min(Math.floor((elapsed / LOADER_DURATION) * 100), 100);
+        counterNode.textContent = String(pct).padStart(3, "0");
+        progressBar.style.width = `${pct}%`;
+        if (elapsed < LOADER_DURATION) {
+            requestAnimationFrame(tick);
+        } else {
+            clearInterval(cycleInterval);
+            setTimeout(() => {
+                gsap.to(loaderEl, {
+                    opacity: 0, duration: 0.5, ease: "power2.inOut",
+                    onComplete: () => {
+                        loaderEl.style.display = "none";
+                        initHeroAnimations();
+                    }
+                });
+            }, 400);
+        }
+    }
+    requestAnimationFrame(tick);
+    gsap.fromTo("#loader-eyebrow", { y: -20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" });
+
+    // ===== HERO ANIMATIONS =====
+    function initHeroAnimations() {
+        const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+        tl.fromTo(".name-reveal", { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 1.2, delay: 0.1 });
+        tl.fromTo(".blur-in",
+            { opacity: 0, y: 20, filter: "blur(10px)" },
+            { opacity: 1, y: 0, filter: "blur(0px)", duration: 1, stagger: 0.1 },
+            "-=1.0"
+        );
+        initScrollPipeline();
+        initRoleStringCyclingLoop();
+    }
+
+    // ===== ROLE CYCLE =====
+    const rolesSequence = ["Relocation", "Logistics", "Packing", "Storage"];
+    let activeRoleIndex = 0;
+    const dynamicRoleContainerNode = document.getElementById("dynamic-role");
+
+    function initRoleStringCyclingLoop() {
+        setInterval(() => {
+            activeRoleIndex = (activeRoleIndex + 1) % rolesSequence.length;
+            if (dynamicRoleContainerNode) {
+                dynamicRoleContainerNode.className = "font-display italic text-text-primary inline-block text-left opacity-0 translate-y-[8px]";
+                setTimeout(() => {
+                    dynamicRoleContainerNode.textContent = rolesSequence[activeRoleIndex];
+                    dynamicRoleContainerNode.className = "font-display italic text-text-primary inline-block text-left animate-role-fade-in";
+                }, 50);
+            }
+        }, 2000);
+    }
+
+    // ===== SCROLL PIPELINE =====
+    function initScrollPipeline() {
+        const navPillNode = document.getElementById("navbar-pill");
+        window.addEventListener("scroll", () => {
+            if (navPillNode) {
+                if (window.scrollY > 100) {
+                    navPillNode.classList.add("shadow-xl", "shadow-black/20", "border-white/20");
                 } else {
-                    clearInterval(textCycleTimerRef);
-                    setTimeout(() => {
-                        gsap.to(loaderEl, {
-                            opacity: 0,
-                            duration: 0.5,
-                            ease: "power2.inOut",
-                            onComplete: () => {
-                                loaderEl.style.display = "none";
-                                initEntranceAnimations();
-                            }
-                        });
-                    }, 400);
+                    navPillNode.classList.remove("shadow-xl", "shadow-black/20", "border-white/20");
                 }
             }
-            window.requestAnimationFrame(processFrameCounter);
+            synchronizeNavigationActiveNodes();
+        }, { passive: true });
 
-            gsap.fromTo("#loader-eyebrow", { y: -20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" });
-
-
-            // --- GSAP REVEAL MAIN ENTRANCE PIPELINE ---
-            function initEntranceAnimations() {
-                const heroTimeline = gsap.timeline({ defaults: { ease: "power3.out" } });
-                
-                heroTimeline.fromTo(".name-reveal", 
-                    { opacity: 0, y: 50 }, 
-                    { opacity: 1, y: 0, duration: 1.2, delay: 0.1 }
-                );
-                
-                heroTimeline.fromTo(".blur-in", 
-                    { opacity: 0, y: 20, filter: "blur(10px)" }, 
-                    { opacity: 1, y: 0, filter: "blur(0px)", duration: 1, stagger: 0.1 },
-                    "-=1.0"
-                );
-
-                initScrollTriggerPipelines();
-                initRoleStringCyclingLoop();
-            }
-
-
-            // --- DYNAMIC ROLES STRINGS CYCLING LOOP ---
-            const rolesSequence = ["Relocation", "Logistics", "Packing", "Storage"];
-            let activeRoleIndex = 0;
-            const dynamicRoleContainerNode = document.getElementById("dynamic-role");
-
-            function initRoleStringCyclingLoop() {
-                setInterval(() => {
-                    activeRoleIndex = (activeRoleIndex + 1) % rolesSequence.length;
-                    dynamicRoleContainerNode.className = "font-display italic text-text-primary inline-block text-left opacity-0 translate-y-[8px]";
-                    
-                    setTimeout(() => {
-                        dynamicRoleContainerNode.textContent = rolesSequence[activeRoleIndex];
-                        dynamicRoleContainerNode.className = "font-display italic text-text-primary inline-block text-left animate-role-fade-in";
-                    }, 50);
-                }, 2000);
-            }
-            function initScrollTriggerPipelines() {
-                const navPillNode = document.getElementById("navbar-pill");
-                window.addEventListener("scroll", () => {
-                    if (window.scrollY > 100) {
-                        navPillNode.classList.add("shadow-xl", "shadow-black/20", "border-white/20");
-                    } else {
-                        navPillNode.classList.remove("shadow-xl", "shadow-black/20", "border-white/20");
+        document.querySelectorAll(".scroll-reveal-node").forEach(node => {
+            gsap.fromTo(node,
+                { opacity: 0, y: 30 },
+                {
+                    opacity: 1, y: 0, duration: 1,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: node, start: "top 85%",
+                        toggleActions: "play none none none"
                     }
-                    synchronizeNavigationActiveNodes();
-                });
-                document.querySelectorAll(".scroll-reveal-node").forEach((node) => {
-                    gsap.fromTo(node, 
-                        { opacity: 0, y: 30 },
-                        {
-                            opacity: 1,
-                            y: 0,
-                            duration: 1,
-                            ease: [0.25, 0.1, 0.25, 1],
-                            scrollTrigger: {
-                                trigger: node,
-                                start: "top 85%",
-                                toggleActions: "play none none none"
-                            }
-                        }
-                    ); });
-                ScrollTrigger.create({
-                    trigger: "#explorations",
-                    start: "top top",
-                    end: "bottom bottom",
-                    pin: "#pinned-layer",
-                    pinSpacing: false
-                });
+                }
+            );
+        });
 
-                gsap.fromTo("#parallax-col-left", 
-                    { y: "0vh" },
-                    {
-                        y: "-35vh",
-                        scrollTrigger: {
-                            trigger: "#explorations",
-                            start: "top bottom",
-                            end: "bottom top",
-                            scrub: true
-                        }
-                    }
-                );
+        if (document.getElementById("explorations")) {
+            ScrollTrigger.create({
+                trigger: "#explorations", start: "top top",
+                end: "bottom bottom", pin: "#pinned-layer", pinSpacing: false
+            });
+            gsap.fromTo("#parallax-col-left", { y: "0vh" },
+                { y: "-35vh", scrollTrigger: { trigger: "#explorations", start: "top bottom", end: "bottom top", scrub: true } }
+            );
+            gsap.fromTo("#parallax-col-right", { y: "0vh" },
+                { y: "25vh", scrollTrigger: { trigger: "#explorations", start: "top bottom", end: "bottom top", scrub: true } }
+            );
+        }
 
-                gsap.fromTo("#parallax-col-right", 
-                    { y: "0vh" },
-                    {
-                        y: "25vh",
-                        scrollTrigger: {
-                            trigger: "#explorations",
-                            start: "top bottom",
-                            end: "bottom top",
-                            scrub: true
-                        }
-                    }
-                );
-            }
+        const leftEl = document.querySelector(".js-animate-left");
+        if (leftEl) {
+            gsap.fromTo(".js-animate-left", { x: -60, opacity: 0 },
+                { x: 0, opacity: 1, duration: 0.7, ease: "power3.out",
+                  scrollTrigger: { trigger: ".js-animate-left", start: "top 85%", toggleActions: "play none none none" }
+                }
+            );
+        }
 
-
-            // --- SEMANTIC NAVIGATION NAVIGATION ACTIVE CLASS SYNC ---
-            const sectionLayoutNodes = document.querySelectorAll("section");
-            const anchorPillElements = document.querySelectorAll(".nav-element");
-
-            function synchronizeNavigationActiveNodes() {
-                let focusedSectionId = "home";
-                sectionLayoutNodes.forEach((section) => {
-                    const dynamicOffsetTrigger = section.offsetTop - 260;
-                    if (window.scrollY >= dynamicOffsetTrigger) {
-                        focusedSectionId = section.getAttribute("id");
-                    }
-                });
-
-                anchorPillElements.forEach((anchor) => {
-                    anchor.className = "nav-element text-xs sm:text-sm rounded-full px-3 sm:px-4 py-1.5 sm:py-2 text-muted hover:text-text-primary hover:bg-stroke/50 transition-all duration-200";
-                    if (anchor.getAttribute("href") === `#${focusedSectionId}`) {
-                        anchor.className = "nav-element text-xs sm:text-sm rounded-full px-3 sm:px-4 py-1.5 sm:py-2 text-text-primary bg-stroke/50 font-medium transition-all duration-200";
-                    }
-                });
-            }
-
-
-            // --- DRIBBLING LOGISTICAL MAPPED MARQUEE SERVICES PIPELINE ---
-            const trackTargetNode = document.getElementById("marquee-track");
-            
-            // Explicit requested content array items list injection mapping logic
+        // Marquee
+        const trackTargetNode = document.getElementById("marquee-track");
+        if (trackTargetNode) {
             const servicesDataItems = [
-                "Residential Moves", "Commercial Packing", "Furniture Assembly", 
+                "Residential Moves", "Commercial Packing", "Furniture Assembly",
                 "Secure Storage", "International Shipping", "Office Shifting", "Dismantling Service"
             ];
-            
-            let htmlSegmentString = "";
-            servicesDataItems.forEach(service => {
-                htmlSegmentString += `<span class="mx-8 inline-flex items-center gap-4 text-white/40"><span>${service}</span><span class="text-xs text-neutral-700">•</span></span>`;
+            let html = "";
+            servicesDataItems.forEach(s => {
+                html += `<span class="mx-8 inline-flex items-center gap-4 text-white/40"><span>${s}</span><span class="text-xs text-neutral-700">•</span></span>`;
             });
+            trackTargetNode.innerHTML = `<div class="marquee-scroller-inner inline-block">${html}${html}</div>`;
+            gsap.to(".marquee-scroller-inner", { xPercent: -50, duration: 25, ease: "none", repeat: -1 });
+        }
 
-            trackTargetNode.innerHTML = `
-                <div class="marquee-scroller-inner inline-block">${htmlSegmentString}${htmlSegmentString}</div>
-            `;
-            
-            gsap.to(".marquee-scroller-inner", {
-                xPercent: -50,
-                duration: 25,
-                ease: "none",
-                repeat: -1
+        // Counter
+        document.querySelectorAll(".counter").forEach(el => {
+            const target = parseInt(el.dataset.target);
+            ScrollTrigger.create({
+                trigger: el, start: "top 80%",
+                onEnter: () => {
+                    gsap.fromTo(el, { textContent: 0 }, {
+                        textContent: target, duration: 1.6, ease: "power3.out",
+                        snap: { textContent: 1 },
+                        onUpdate: function() { el.textContent = Math.ceil(parseFloat(el.textContent)); }
+                    });
+                },
+                onLeaveBack: () => { gsap.killTweensOf(el); el.textContent = "0"; }
             });
         });
-    </script>
-    <script>
-        // --- ACCORDION FAQ SYSTEM TOGGLE CONTROLLER ---
-function toggleFaq(buttonElement) {
-    const activeItemContainer = buttonElement.parentElement;
-    const answerNode = buttonElement.nextElementSibling;
-    const rotationIconNode = buttonElement.querySelector('.faq-icon-plus');
 
-    // Close other sibling open items for premium seamless feel
-    document.querySelectorAll('.faq-item').forEach(item => {
-        if (item !== activeItemContainer) {
-            const openAnswer = item.querySelector('.faq-answer');
-            const openIcon = item.querySelector('.faq-icon-plus');
-            if (openAnswer) {
-                openAnswer.style.maxHeight = null;
-                openAnswer.style.opacity = "0";
+        // 3D tilt
+        document.querySelectorAll(".s-card, .p-card").forEach(card => {
+            card.addEventListener("mousemove", e => {
+                const r = card.getBoundingClientRect();
+                const x = (e.clientX - r.left) / r.width - 0.5;
+                const y = (e.clientY - r.top) / r.height - 0.5;
+                gsap.to(card, { rotateX: -y * 10, rotateY: x * 10, duration: 0.4, ease: "power2.out", transformPerspective: 800 });
+            });
+            card.addEventListener("mouseleave", () => {
+                gsap.to(card, { rotateX: 0, rotateY: 0, duration: 0.7, ease: "elastic.out(1,0.7)" });
+            });
+        });
+    }
+
+    // ===== NAV SYNC =====
+    const sectionLayoutNodes = document.querySelectorAll("section");
+    const anchorPillElements = document.querySelectorAll(".nav-element");
+
+    function synchronizeNavigationActiveNodes() {
+        let focusedSectionId = "home";
+        sectionLayoutNodes.forEach(section => {
+            if (window.scrollY >= section.offsetTop - 260) {
+                focusedSectionId = section.getAttribute("id");
             }
-            if (openIcon) {
-                openIcon.style.transform = "rotate(0deg)";
+        });
+        anchorPillElements.forEach(anchor => {
+            anchor.className = "nav-element text-xs sm:text-sm rounded-full px-3 sm:px-4 py-1.5 sm:py-2 text-muted hover:text-text-primary hover:bg-stroke/50 transition-all duration-200";
+            if (anchor.getAttribute("href") === `#${focusedSectionId}`) {
+                anchor.className = "nav-element text-xs sm:text-sm rounded-full px-3 sm:px-4 py-1.5 sm:py-2 text-text-primary bg-stroke/50 font-medium transition-all duration-200";
             }
-            item.classList.remove('border-white/20');
+        });
+    }
+
+    // ===== SMOOTH SCROLL =====
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener("click", e => {
+            const id = a.getAttribute("href");
+            if (id.length > 1 && document.querySelector(id)) {
+                e.preventDefault();
+                gsap.to(window, { duration: 1.2, scrollTo: { y: id, offsetY: 76 }, ease: "power3.inOut" });
+            }
+        });
+    });
+
+    }); // waitForGSAP end
+}); // DOMContentLoaded end
+
+// ===== FAQ TOGGLE =====
+function toggleFaq(btn) {
+    const item = btn.parentElement;
+    const answer = btn.nextElementSibling;
+    const icon = btn.querySelector('.faq-icon-plus');
+    document.querySelectorAll('.faq-item').forEach(i => {
+        if (i !== item) {
+            const a = i.querySelector('.faq-answer');
+            const ic = i.querySelector('.faq-icon-plus');
+            if (a) { a.style.maxHeight = null; a.style.opacity = "0"; }
+            if (ic) ic.style.transform = "rotate(0deg)";
+            i.classList.remove('border-white/20');
         }
     });
-
-    // Toggle target state metrics
-    if (answerNode.style.maxHeight) {
-        answerNode.style.maxHeight = null;
-        answerNode.style.opacity = "0";
-        if (rotationIconNode) rotationIconNode.style.transform = "rotate(0deg)";
-        activeItemContainer.classList.remove('border-white/20');
+    if (answer.style.maxHeight) {
+        answer.style.maxHeight = null;
+        answer.style.opacity = "0";
+        if (icon) icon.style.transform = "rotate(0deg)";
+        item.classList.remove('border-white/20');
     } else {
-        answerNode.style.maxHeight = answerNode.scrollHeight + "px";
-        answerNode.style.opacity = "1";
-        if (rotationIconNode) rotationIconNode.style.transform = "rotate(45deg)";
-        activeItemContainer.classList.add('border-white/20');
-    }}
-    </script>
-    <script>
-gsap.registerPlugin(ScrollTrigger);
-gsap.to(".js-animate-left", {
-    scrollTrigger: {
-        trigger: "#pinned-layer", 
-        start: "top 80%",          // Isse text screen ke 80% niche aate hi (yaani bohot jaldi) trigger ho jayega
-        toggleActions: "play reverse play reverse", 
-    },
-    x: 0,                         
-    opacity: 1,                   
-    duration: 0.5,                // Animation speed ko 0.8s se kam karke 0.5s kar diya taaki jaldi aaye
-    ease: "power3.out"            // Thoda zyada snappy aur fast ease use kiya hai
-});
-    </script>
-   <script src="hls.min.js"></script>
-<script src="gsap.min.js"></script>
-<script src="ScrollTrigger.min.js"></script>
-<script>
-    // Yeh event check karega ki jab browser poori tarah ready ho jaye, tabhi animation run ho
-    window.addEventListener("DOMContentLoaded", function () {
-        if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
-            gsap.registerPlugin(ScrollTrigger); }
-        console.log("Everything is working smoothly on GitHub Pages layout!");
-    });
+        answer.style.maxHeight = answer.scrollHeight + "px";
+        answer.style.opacity = "1";
+        if (icon) icon.style.transform = "rotate(45deg)";
+        item.classList.add('border-white/20');
+    }
+}
+
+// ===== FORM SUBMIT =====
+function submitForm(btn) {
+    const original = btn.textContent;
+    btn.textContent = "✓ Request Sent! We'll contact you soon.";
+    btn.style.background = "linear-gradient(135deg,#2e7d32,#43a047)";
+    setTimeout(() => { btn.textContent = original; btn.style.background = ""; }, 3500);
+}
 </script>
+<!-- GSAP pehle — defer ke saath -->
+<script src="gsap.min.js"></script>
+<script  src="ScrollTrigger.min.js"></script>
+<script  src="ScrollToPlugin.min.js"></script>
+<!-- HLS alag — defer -->
+<script  src="hls.min.js"></script>
 </body>
 </html>
