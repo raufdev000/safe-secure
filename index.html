@@ -4,40 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Safe & Secure Movers Dubai — No. 1 Transport Service</title>
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS Script CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Core Engine Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.8/dist/hls.min.js"></script>
+  
+   <head>
+  <!-- Fonts pehle load hon -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Tailwind Config Injection -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        body: ['Inter', 'sans-serif'],
-                        display: ['Instrument Serif', 'serif'],
-                    },
-                    colors: {
-                        bg: 'hsl(var(--bg))',
-                        surface: 'hsl(var(--surface))',
-                        'text-primary': 'hsl(var(--text))',
-                        muted: 'hsl(var(--muted))',
-                        stroke: 'hsl(var(--stroke))',
-                    }
-                }
-            }
-        }
-    </script>
+  <!-- Local Tailwind CSS -->
+  <link rel="stylesheet" href="output.css">
+  
+  <!-- Tailwind config HATAO ye line bilkul: -->
+  <!-- <script src="https://cdn.tailwindcss.com"></script> DELETE -->
+</head>
 
     <!-- Global Custom Stylesheets & Keyframes -->
     <style>
@@ -168,29 +147,6 @@
     </style>
 </head>
 <body class="font-body text-text-primary bg-bg antialiased selection:bg-text-primary selection:text-bg">
-
-    <!-- SECTION 1: LOADING SCREEN -->
-    <div id="loader" class="fixed inset-0 z-[9999] bg-bg flex flex-col justify-between p-6 md:p-12 select-none">
-        <div id="loader-eyebrow" class="text-xs text-muted uppercase tracking-[0.3em] opacity-0">Safe & Secure</div>
-        
-        <div class="h-24 flex items-center justify-start overflow-hidden">
-            <div id="loader-word-container" class="relative h-full w-full">
-                <!-- Word dynamic injection target -->
-            </div>
-        </div>
-
-        <div class="w-full space-y-4">
-            <div class="flex justify-end">
-                <span id="loader-counter" class="text-6xl md:text-8xl lg:text-9xl font-display text-text-primary tabular-nums">000</span>
-            </div>
-            <div class="w-full h-[3px] bg-stroke/50 relative rounded-full overflow-hidden">
-                <div id="loader-progress" class="absolute inset-y-0 left-0 w-0 accent-gradient shadow-[0_0_8px_rgba(137,170,204,0.35)]"></div>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- GLOBAL FIXED NAVIGATION HEADER -->
 <nav class="fixed top-0 left-0 right-0 z-50 flex justify-center pt-4 md:pt-6 px-4 pointer-events-none">
     <div id="navbar-pill" class="flex flex-col w-full max-w-sm md:max-w-fit rounded-3xl md:rounded-full backdrop-blur-md border border-white/10 bg-surface px-4 py-3 md:py-2 pointer-events-auto transition-all duration-300 shadow-lg">
         
@@ -200,9 +156,7 @@
                 <div class="h-8 md:h-9 w-auto flex items-center justify-center overflow-hidden">
                     <img src="" alt="LOGO" class="h-full w-auto object-contain hidden">
                     <span class="text-sm text-blue-500 font-mono font-bold tracking-wider group-hover:text-white transition-colors">[ LARGE LOGO ]</span>
-                </div>
-            </a>
-            
+                </div> </a>
             <button id="menu-toggle" class="flex md:hidden flex-col justify-center items-center w-8 h-8 gap-1.5 focus:outline-none" aria-label="Toggle Menu">
                 <span id="line1" class="w-5 h-[2px] bg-text-primary rounded transition-all duration-300"></span>
                 <span id="line2" class="w-5 h-[2px] bg-text-primary rounded transition-all duration-300"></span>
@@ -235,15 +189,8 @@
         <span class="absolute bottom-1 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-blue-500 transition-all duration-300 group-hover:w-1/2"></span>
     </a>
 </div>
-            <div class="hidden md:block w-px h-6 bg-stroke mx-2 shrink-0"></div>
-
-            <a href="https://api.whatsapp.com/send/?phone=971556255690" target="_blank" class="hidden md:inline-flex group relative items-center justify-center text-sm font-medium rounded-full px-4 py-2 text-text-primary overflow-visible shrink-0 whitespace-nowrap">
-                <span class="absolute inset-0 rounded-full accent-gradient -z-10 scale-[1.08] blur-[1px] opacity-0 group-hover:opacity-100 transition-opacity duration-300" style="padding: 2px; margin: -2px;"></span>
-                <span class="absolute inset-0 bg-surface rounded-full -z-10"></span>
-                <span class="flex items-center gap-1">WhatsApp Us <span class="inline-block transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200">↗</span></span>
-            </a>
+            <div class="hidden md:block w-px h-6 bg-stroke mx-2 shrink-0"></div><a href="https://api.whatsapp.com/send/?phone=971556255690" target="_blank" class="hidden md:inline-flex group relative items-center justify-center text-sm font-medium rounded-full px-4 py-2 text-text-primary overflow-visible shrink-0 whitespace-nowrap"><span class="absolute inset-0 rounded-full accent-gradient -z-10 scale-[1.08] blur-[1px] opacity-0 group-hover:opacity-100 transition-opacity duration-300" style="padding: 2px; margin: -2px;"></span><span class="absolute inset-0 bg-surface rounded-full -z-10"></span><span class="flex items-center gap-1">WhatsApp Us <span class="inline-block transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200">↗</span></span></a>
         </div>
-
         <div id="mobile-menu" class="w-full max-h-0 overflow-hidden opacity-0 md:hidden flex flex-col items-center gap-4 pt-0 transition-all duration-300 ease-in-out">
             <div class="w-full h-px bg-stroke my-2"></div>
             <a href="#home" class="mobile-nav-link text-base font-medium text-text-primary py-1">Home</a>
@@ -258,7 +205,6 @@
         </div>
     </div>
 </nav>
-
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const menuToggle = document.getElementById('menu-toggle');
@@ -312,53 +258,40 @@
         }
     });
 </script>
-
-
-    <!-- SECTION 2: HERO SECTION -->
-    <section id="home" class="relative w-screen h-screen flex items-center justify-center overflow-hidden">
-        <!-- HLS Backplate Media Module -->
-        <div class="absolute inset-0 -z-30 w-full h-full overflow-hidden">
-            <video id="hero-video" autoplay muted loop playsinline class="absolute top-1/2 left-1/2 min-w-full min-h-full object-cover -translate-x-1/2 -translate-y-1/2"></video>
-            <div class="absolute inset-0 bg-black/20"></div>
-            <div class="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-bg to-transparent"></div>
+ <section id="home" class="relative w-screen h-screen flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 -z-30 w-full h-full overflow-hidden">
+        <video 
+            id="hero-video" 
+            autoplay 
+            muted 
+            loop 
+            playsinline     preload="auto"  class="absolute top-1/2 left-1/2 min-w-full min-h-full object-cover -translate-x-1/2 -translate-y-1/2"></video>
+        
+        <div class="absolute inset-0 bg-black/20 pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-bg to-transparent pointer-events-none"></div>
+    </div>
+    <div class="z-10 text-center px-6 max-w-4xl flex flex-col items-center">
+        <div class="blur-in text-xs text-muted uppercase tracking-[0.3em] mb-8">DUBAI'S NO. 1 TRANSPORTATION SERVICE</div>
+        <h1 class="name-reveal text-5xl md:text-7xl lg:text-8xl font-display italic leading-[1.0] tracking-tight text-text-primary mb-6"> Safe & Secure Movers
+        </h1>
+        <div class="blur-in text-base md:text-xl text-text-primary/90 font-light mb-6 h-8 flex items-center gap-1.5">
+            Premium <span id="dynamic-role" class="font-display italic text-text-primary inline-block min-w-[120px] text-left">Relocation</span> Solutions.
         </div>
 
-        <!-- Typography Matrix -->
-        <div class="z-10 text-center px-6 max-w-4xl flex flex-col items-center">
-            <div class="blur-in text-xs text-muted uppercase tracking-[0.3em] mb-8">DUBAI'S NO. 1 TRANSPORTATION SERVICE</div>
-            
-            <h1 class="name-reveal text-5xl md:text-7xl lg:text-8xl font-display italic leading-[1.0] tracking-tight text-text-primary mb-6">
-                Safe & Secure Movers
-            </h1>
+        <p class="blur-in text-sm md:text-base text-muted max-w-lg mb-12 font-light leading-relaxed">
+            Your premium trusted partner for stress-free relocation across Dubai, Al Ain, Abu Dhabi, Sharjah & beyond. We execute every logistical transition with absolute precision.
+        </p>
 
-            <div class="blur-in text-base md:text-xl text-text-primary/90 font-light mb-6 h-8 flex items-center gap-1.5">
-                Premium <span id="dynamic-role" class="font-display italic text-text-primary inline-block min-w-[120px] text-left">Relocation</span> Solutions.
-            </div>
-
-            <p class="blur-in text-sm md:text-base text-muted max-w-lg mb-12 font-light leading-relaxed">
-                Your premium trusted partner for stress-free relocation across Dubai, Al Ain, Abu Dhabi, Sharjah & beyond. We execute every logistical transition with absolute precision.
-            </p>
-
-            <div class="blur-in inline-flex gap-4">
-                <a href="#services" class="group relative rounded-full text-sm px-7 py-3.5 bg-text-primary text-bg font-medium transition-all duration-300 hover:scale-105 hover:bg-bg hover:text-text-primary border border-transparent hover:border-white/20 accent-ring-hover">
-                    Our Services
-                </a>
-                <a href="https://api.whatsapp.com/send/?phone=971556255690" target="_blank" class="group rounded-full text-sm px-7 py-3.5 border-2 border-stroke bg-bg text-text-primary font-medium transition-all duration-300 hover:scale-105 hover:border-transparent accent-ring-hover">
-                    WhatsApp Us
-                </a>
-            </div>
+        <div class="blur-in inline-flex gap-4">
+            <a href="#services" class="group relative rounded-full text-sm px-7 py-3.5 bg-text-primary text-bg font-medium transition-all duration-300 hover:scale-105 hover:bg-bg hover:text-text-primary border border-transparent hover:border-white/20 accent-ring-hover">
+                Our Services
+            </a>
+            <a href="https://api.whatsapp.com/send/?phone=971556255690" target="_blank" class="group rounded-full text-sm px-7 py-3.5 border-2 border-stroke bg-bg text-text-primary font-medium transition-all duration-300 hover:scale-105 hover:border-transparent accent-ring-hover">
+                WhatsApp Us
+            </a>
         </div>
-
-        <!-- Metric Scroll Overlay Bar -->
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none select-none">
-            <span class="text-[9px] text-muted uppercase tracking-[0.2em]">Scroll</span>
-            <div class="w-[1px] h-10 bg-stroke relative overflow-hidden">
-                <div class="absolute top-0 left-0 w-full h-1/2 bg-white/60 animate-scroll-down"></div>
-            </div>
-        </div>
-    </section>
-
-
+    </div>
+</section>
     <!-- SECTION 3: SERVICES GRID SECTION -->
     <section id="services" class="bg-bg py-20 md:py-32 border-t border-stroke">
         <div class="max-w-[1200px] mx-auto px-6 md:px-10 lg:px-16 scroll-reveal-node">
@@ -426,8 +359,6 @@
             </div>
         </div>
     </section>
-
-
     <!-- SECTION 4: REALLOCATED PRE-EXISTING FLEET OVERVIEW VISUALS -->
     <section id="fleet" class="bg-bg py-16 md:py-24 border-t border-stroke">
         <div class="max-w-[1200px] mx-auto px-6 md:px-10 lg:px-16 scroll-reveal-node">
@@ -453,8 +384,6 @@
             </div>
         </div>
     </section>
-
-
     <!-- SECTION 5: EXPLORATIONS (PARALLAX LOGISTICAL GRAPHICS) -->
     <section id="explorations" class="relative min-h-[300vh] bg-bg">
   <section id="gallery-section" class="relative w-full">
@@ -512,7 +441,6 @@
             </div>
         </div>
     </section>
-
 <section id="faq" class="relative bg-bg py-24 md:py-32 border-t border-stroke overflow-hidden">
     
     <div class="absolute inset-0 z-0 w-full h-full pointer-events-none">
@@ -523,7 +451,6 @@
         <div class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-bg to-transparent"></div>
         <div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-bg to-transparent"></div>
     </div>
-
     <div class="relative z-10 max-w-[1200px] mx-auto px-6 md:px-10 lg:px-16">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
             
@@ -644,11 +571,9 @@
             </div>
         </div>
     </section>
-
 <section id="quote" class="relative py-24 md:py-32 overflow-hidden">
     <div class="absolute inset-0 -z-10">
-        <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1600&q=80" class="w-full h-full object-cover" alt="bg">
-        <div class="absolute inset-0 bg-bg/88"></div>
+        <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1600&q=80" class="w-full h-full object-cover" alt="bg"><div class="absolute inset-0 bg-bg/88"></div>
     </div>
     <div class="max-w-[1200px] mx-auto px-6 md:px-10 lg:px-16">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
@@ -662,9 +587,7 @@
                 <div class="flex flex-col gap-4">
                     <div class="flex items-center gap-3">
                         <div class="w-10 h-10 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center flex-shrink-0">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f5a623" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                        </div>
-                        <div>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f5a623" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>   </div>   <div>
                             <div class="text-sm font-semibold text-white">+971 52 440 2005</div>
                             <div class="text-xs text-muted">Call or WhatsApp</div>
                         </div>
@@ -722,12 +645,9 @@
         <a href="https://api.whatsapp.com/send/?phone=971556255690" target="_blank" class="group relative rounded-full text-sm md:text-base px-8 py-4 bg-surface border border-stroke text-text-primary tracking-wider font-medium overflow-visible transition-all duration-300 hover:bg-blue-600 hover:text-white hover:border-blue-500 inline-flex items-center gap-2">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="text-blue-500 group-hover:text-white transition-colors"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
             +971 52 440 2005
-        </a>
-    </div>
-
+        </a> </div>
     <div class="max-w-[1200px] mx-auto px-6 md:px-10 lg:px-16">
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mb-16">
-            
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mb-16">      
             <div class="flex flex-col items-center sm:items-start text-center sm:text-left gap-4">
                 <div class="w-full max-w-[180px] h-20 rounded-xl border border-stroke border-dashed bg-surface/30 flex items-center justify-center p-3 group transition-colors hover:border-blue-500/50">
                     <img src="" alt="YOUR LOGO HERE" class="max-w-full max-h-full object-contain hidden">
@@ -736,11 +656,7 @@
 
                 <div>
                     <div class="text-2xl font-bold text-white tracking-tight">Safe &amp; Secure</div>
-                    <div class="text-sm text-blue-500 font-medium">Movers Dubai</div>
-                </div>
-                
-                <p class="text-sm text-muted leading-relaxed">Dedicated to making your move seamless and secure across UAE. Trusted since 2014.</p>
-                
+                    <div class="text-sm text-blue-500 font-medium">Movers Dubai</div> </div>              <p class="text-sm text-muted leading-relaxed">Dedicated to making your move seamless and secure across UAE. Trusted since 2014.</p>
                 <div class="flex gap-3 pt-2">
                     <a href="https://www.facebook.com/people/Safe-Secure-Movers/61564820282959/" target="_blank" class="w-8 h-8 rounded-full border border-stroke flex items-center justify-center text-muted hover:text-blue-400 hover:border-blue-500/50 transition-colors">
                         <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
@@ -753,7 +669,6 @@
                     </a>
                 </div>
             </div>
-
             <div class="text-center sm:text-left">
                 <div class="text-xs uppercase tracking-widest text-muted mb-4">Services</div>
                 <ul class="flex flex-col gap-2">
@@ -765,7 +680,6 @@
                     <li><a href="#services" class="text-sm text-muted hover:text-blue-400 transition-colors">Dismantling Service</a></li>
                 </ul>
             </div>
-
             <div class="text-center sm:text-left">
                 <div class="text-xs uppercase tracking-widest text-muted mb-4">Quick Links</div>
                 <ul class="flex flex-col gap-2">
@@ -793,7 +707,6 @@
                 </a>
             </div>
         </div>
-
         <div class="flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-stroke pt-8 text-xs text-muted">
             <p>© 2026 <a href="#" class="hover:text-blue-400 transition-colors">safeandsecuremovers.com</a> — All rights reserved</p>
             <div class="flex items-center gap-2">
@@ -807,7 +720,6 @@
     </div>
   </section>
 </footer>
-    <!-- CLIENT SIDE INTERACTIVE CONTROLLER JAVASCRIPT ENGINE -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             gsap.registerPlugin(ScrollTrigger);
@@ -828,17 +740,10 @@
             };
             streamMediaToId("hero-video");
             streamMediaToId("footer-video");
-
-
             // --- ENGINE LOADER PROGRESS WORD SEQUENCING MATRIX ---
             const loaderEl = document.getElementById("loader");
             const wordTargetNode = document.getElementById("loader-word-container");
-            const counterNode = document.getElementById("loader-counter");
-            const progressBarInnerNode = document.getElementById("loader-progress");
-            
-            const cyclingLexicon = ["Packers", "Movers", "Transport"];
-            let activeLexiconIndex = 0;
-
+            const counterNode = document.getElementById("loader-counter");  const progressBarInnerNode = document.getElementById("loader-progress"); const cyclingLexicon = ["Packers", "Movers", "Transport"];        let activeLexiconIndex = 0;
             cyclingLexicon.forEach((term, idx) => {
                 const layer = document.createElement("div");
                 layer.className = `absolute inset-0 text-4xl md:text-6xl lg:text-7xl font-display italic text-text-primary/80 transition-all duration-500 transform flex items-center ${idx === 0 ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`;
@@ -846,7 +751,6 @@
                 layer.textContent = term;
                 wordTargetNode.appendChild(layer);
             });
-
             const textCycleTimerRef = setInterval(() => {
                 const currentEl = document.getElementById(`word-node-${activeLexiconIndex}`);
                 activeLexiconIndex = (activeLexiconIndex + 1) % cyclingLexicon.length;
@@ -855,10 +759,7 @@
                 if (currentEl && incomingEl) {
                     currentEl.className = "absolute inset-0 text-4xl md:text-6xl lg:text-7xl font-display italic text-text-primary/80 transition-all duration-500 transform flex items-center -translate-y-8 opacity-0";
                     incomingEl.className = "absolute inset-0 text-4xl md:text-6xl lg:text-7xl font-display italic text-text-primary/80 transition-all duration-500 transform flex items-center translate-y-0 opacity-100";
-                }
-            }, 900);
-
-            let renderStartTime = null;
+                }}, 900); let renderStartTime = null;
             const targetDuration = 2700;
 
             function processFrameCounter(timestamp) {
@@ -927,9 +828,6 @@
                     }, 50);
                 }, 2000);
             }
-
-
-            // --- ENGINE SCROLL DRIVEN TRIGGERS PIPELINES ---
             function initScrollTriggerPipelines() {
                 const navPillNode = document.getElementById("navbar-pill");
                 window.addEventListener("scroll", () => {
@@ -940,7 +838,6 @@
                     }
                     synchronizeNavigationActiveNodes();
                 });
-
                 document.querySelectorAll(".scroll-reveal-node").forEach((node) => {
                     gsap.fromTo(node, 
                         { opacity: 0, y: 30 },
@@ -955,9 +852,7 @@
                                 toggleActions: "play none none none"
                             }
                         }
-                    );
-                });
-
+                    ); });
                 ScrollTrigger.create({
                     trigger: "#explorations",
                     start: "top top",
@@ -1076,14 +971,10 @@ function toggleFaq(buttonElement) {
         answerNode.style.opacity = "1";
         if (rotationIconNode) rotationIconNode.style.transform = "rotate(45deg)";
         activeItemContainer.classList.add('border-white/20');
-    }
-}
+    }}
     </script>
     <script>
-  // Ensure GSAP and ScrollTrigger are registered
 gsap.registerPlugin(ScrollTrigger);
-
-// Instantly trigger animation as soon as the section / first image enters
 gsap.to(".js-animate-left", {
     scrollTrigger: {
         trigger: "#pinned-layer", 
@@ -1096,5 +987,16 @@ gsap.to(".js-animate-left", {
     ease: "power3.out"            // Thoda zyada snappy aur fast ease use kiya hai
 });
     </script>
+   <script src="hls.min.js"></script>
+<script src="gsap.min.js"></script>
+<script src="ScrollTrigger.min.js"></script>
+<script>
+    // Yeh event check karega ki jab browser poori tarah ready ho jaye, tabhi animation run ho
+    window.addEventListener("DOMContentLoaded", function () {
+        if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
+            gsap.registerPlugin(ScrollTrigger); }
+        console.log("Everything is working smoothly on GitHub Pages layout!");
+    });
+</script>
 </body>
 </html>
